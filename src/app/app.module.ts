@@ -22,7 +22,7 @@ import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from "ngx-per
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { DateAdapters } from './datepicker/custom.date.adapter';
+import { CustomDateAdapter } from './datepicker/custom.date.adapter';
 import 'hammerjs';
 import { CovalentLayoutModule, CovalentStepsModule, CovalentExpansionPanelModule  } from '@covalent/core';
 
@@ -276,7 +276,7 @@ const sortablejsConfig: SortablejsOptions = {
 		MenuItems,
 		BreadcrumbService,
 		PageTitleService,
-		{provide: DateAdapter, useClass: DateAdapters.CustomDateAdapter }
+		{provide: DateAdapter, useClass: CustomDateAdapter }
 	]
 })
 export class GeneAppModule {

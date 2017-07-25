@@ -102,8 +102,7 @@ export class AssetRegistrationBasicDataComponent implements OnInit, OnDestroy, I
 
         let basicDataInitialForm = this.formBuilder.group({
             paperTypeId: new FormControl(null, Validators.required),
-            paperCode: new FormControl(null, Validators.compose([Validators.required, Validators.maxLength(50)])),
-            maturityDate: new FormControl(null, Validators.required),
+            paperCode: new FormControl(null, Validators.compose([Validators.required, Validators.maxLength(50)])),            
             warranty: [null],
 			dailyLiquidity: [null],
 			law12431: [null],
@@ -120,6 +119,7 @@ export class AssetRegistrationBasicDataComponent implements OnInit, OnDestroy, I
             issuingQuantity: new FormControl(null, Validators.required),
             issuingNumber: new FormControl(null, Validators.required),
             issuingSerialNumber: new FormControl(null, Validators.required),
+            maturityDate: new FormControl(null, Validators.required),
             debtors: this.debtorsControl,
             pulverized: [null],
             clearings: this.clearingsControl,
@@ -146,6 +146,12 @@ export class AssetRegistrationBasicDataComponent implements OnInit, OnDestroy, I
             clearingId: new FormControl(null, Validators.required),
             clearingTicker: new FormControl(null)
         });
+
+        this.formArrayErrors['clearings'].push({
+            'clearingId': [],
+            'clearingTicker': [],
+        });
+        
         this.clearingsControl.push(clearingFormGroup);
     }
 
@@ -219,7 +225,8 @@ export class AssetRegistrationBasicDataComponent implements OnInit, OnDestroy, I
 
     public formArrayErrors: { [index: string]: Array<IArrayItemErrors> } = {
         debtors: [],
-        valorizationGroup: []
+        valorizationGroup: [],
+        clearings: []
     }
 
     public validationMessages: { [index: string]: { [property: string]: string; } } =

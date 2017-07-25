@@ -1,19 +1,36 @@
 <td-steps [mode]="this.stepperMode">
-    <td-step #initialStep label="Início" [state]="initialStepState" [active]="true">
+    <td-step #initialStep
+             label="Início"
+             [state]="initialStepState"
+             [active]="true">
         <form [formGroup]="basicDataInitialForm">
-            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                <div fxFlex.gt-sm="99" fxFlex.gt-xs="99" fxFlex="100">
-                    <institution-autocomplete [label]="'Oferta'" [control]="basicDataIssuingForm.controls['issuer']" [controlErrors]="formErrors['issuer']"
-                        [idInitialized]="issuerIdInitialized" (isBusyStateChanged)="autoCompleteBusy = $event">
+            <div fxLayout="row"
+                 fxLayoutWrap="wrap"
+                 fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="99"
+                     fxFlex.gt-xs="99"
+                     fxFlex="100">
+                    <institution-autocomplete [label]="'Oferta'"
+                                              [control]="basicDataIssuingForm.controls['issuer']"
+                                              [controlErrors]="formErrors['issuer']"
+                                              [idInitialized]="issuerIdInitialized"
+                                              (isBusyStateChanged)="autoCompleteBusy = $event">
                     </institution-autocomplete>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                    <asset-type-select [label]="'*Tipo de papel'" [assetTypeControl]="basicDataInitialForm.controls['paperTypeId']">
+            <div fxLayout="row"
+                 fxLayoutWrap="wrap"
+                 fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49"
+                     fxFlex.gt-xs="49"
+                     fxFlex="100">
+                    <asset-type-select [label]="'*Tipo de papel'"
+                                       [assetTypeControl]="basicDataInitialForm.controls['paperTypeId']">
                     </asset-type-select>
                 </div>
-                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                <div fxFlex.gt-sm="49"
+                     fxFlex.gt-xs="49"
+                     fxFlex="100">
                     <form-input label="*Código interno do Papel"
                                 [control]="basicDataInitialForm.controls['paperCode']"
                                 [errors]="formErrors['paperCode']">
@@ -21,37 +38,63 @@
                 </div>
             </div>
 
-            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center" class="checkbox-row">
-                <div fxFlex.gt-sm="33" fxFlex.gt-xs="33" fxFlex="100" class="md-checkbox-container">
+            <div fxLayout="row"
+                 fxLayoutWrap="wrap"
+                 fxLayoutAlign="space-between center"
+                 class="checkbox-row">
+                <div fxFlex.gt-sm="33"
+                     fxFlex.gt-xs="33"
+                     fxFlex="100"
+                     class="md-checkbox-container">
                     <md-checkbox [formControl]="basicDataInitialForm.controls['dailyLiquidity']">
                         Liquidez diária
                     </md-checkbox>
                 </div>
-                <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" class="md-checkbox-container">
+                <div fxFlex.gt-sm="32"
+                     fxFlex.gt-xs="32"
+                     fxFlex="100"
+                     class="md-checkbox-container">
                     <md-checkbox [formControl]="basicDataInitialForm.controls['law12431']">
                         Lei 12431(brasileiro)
                     </md-checkbox>
                 </div>
-                <div fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100" class="md-checkbox-container">
+                <div fxFlex.gt-sm="32"
+                     fxFlex.gt-xs="32"
+                     fxFlex="100"
+                     class="md-checkbox-container">
                     <md-checkbox [formControl]="basicDataInitialForm.controls['law12431']">
                         Lei 12431(estrangeiro)
                     </md-checkbox>
                 </div>
             </div>
 
-            <div fxLayout="row" fxLayoutAlign="start">
-                <button md-button type="button" disabled>Voltar</button>
-                <button md-button md-raised-button [disabled]="!basicDataInitialForm.valid" (click)="issuingStep.open()" type="button">
-                                        Próximo 
-                                    </button>
+            <div fxLayout="row"
+                 fxLayoutAlign="start">
+                <button md-button
+                        type="button"
+                        disabled>Voltar</button>
+                <button md-button
+                        md-raised-button
+                        [disabled]="!basicDataInitialForm.valid"
+                        (click)="issuingStep.open()"
+                        type="button">
+                    Próximo 
+                </button>
             </div>
         </form>
     </td-step>
     <!-- <td-step #issuingStep label="Emissão" [state]="issuingStepState" [disabled]="issuingStepDisabled || autoCompleteBusy" disableRipple> -->
-    <td-step #issuingStep label="Emissão" [state]="issuingStepState">
+    <td-step #issuingStep
+             label="Emissão"
+             [state]="issuingStepState">
         <form [formGroup]="basicDataIssuingForm">
-            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                <div fxFlex.gt-sm="99" fxFlex.gt-xs="99" fxFlex="99" class="md-checkbox-container">
+            <div fxLayout="row"
+                 fxLayoutWrap="wrap"
+                 fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="99"
+                     fxFlex.gt-xs="99"
+                     fxFlex="99"
+                     class="md-checkbox-container">
                     <md-checkbox [formControl]="basicDataIssuingForm.controls['pulverized']">
                         Pulverizado
                     </md-checkbox>
@@ -59,32 +102,58 @@
             </div>
 
             <td-expansion-panel-group>
-                <td-expansion-panel label="Emissor e devedores" expand="true">
+                <td-expansion-panel label="Emissor e devedores"
+                                    expand="true">
                     <div class="md-padding">
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                            <div fxFlex.gt-xs="88" fxFlex="70">
-                                <institution-autocomplete [label]="'*Emissor'" [control]="basicDataIssuingForm.controls['issuer']" [controlErrors]="formErrors['issuer']"
-                                    [idInitialized]="issuerIdInitialized" (isBusyStateChanged)="autoCompleteBusy = $event">
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-xs="88"
+                                 fxFlex="70">
+                                <institution-autocomplete [label]="'*Emissor'"
+                                                          [control]="basicDataIssuingForm.controls['issuer']"
+                                                          [controlErrors]="formErrors['issuer']"
+                                                          [idInitialized]="issuerIdInitialized"
+                                                          (isBusyStateChanged)="autoCompleteBusy = $event">
                                 </institution-autocomplete>
                             </div>
                         </div>
 
-                        <button md-button color="primary" mdTooltip="Adicionar devedor" type="button" (click)="addDebtor()" *ngIf="basicDataIssuingForm.controls['pulverized'].value">
+                        <button md-button
+                                color="primary"
+                                mdTooltip="Adicionar devedor"
+                                type="button"
+                                (click)="addDebtor()"
+                                *ngIf="basicDataIssuingForm.controls['pulverized'].value">
                             <md-icon>add</md-icon> Adicionar devedor
                         </button>
 
                         <ng-container formArrayName="debtors">
-                            <div *ngFor="let c of basicDataIssuingForm.controls['debtors'].controls; let i=index" fxLayout="row" fxLayoutWrap="wrap"
-                                fxLayoutAlign="space-around center">
+                            <div *ngFor="let c of basicDataIssuingForm.controls['debtors'].controls; let i=index"
+                                 fxLayout="row"
+                                 fxLayoutWrap="wrap"
+                                 fxLayoutAlign="space-around center">
                                 <ng-container [formGroupName]="i">
-                                    <div fxFlex.gt-xs="88" fxFlex="70">
-                                        <institution-autocomplete [label]="(basicDataIssuingForm.controls['pulverized'].value ? '' : '*') + 'Devedor'" [control]="basicDataIssuingForm.controls['debtors'].controls[i].controls.debtorId"
-                                            [controlErrors]="formArrayErrors['debtors'][i]['debtorId']" [idInitialized]="debtorIdInitialized"
-                                            (isBusyStateChanged)="autoCompleteBusy = $event">
+                                    <div fxFlex.gt-xs="88"
+                                         fxFlex="70">
+                                        <institution-autocomplete [label]="(basicDataIssuingForm.controls['pulverized'].value ? '' : '*') + 'Devedor'"
+                                                                  [control]="basicDataIssuingForm.controls['debtors'].controls[i].controls.debtorId"
+                                    
+                                                                  [controlErrors]="formArrayErrors['debtors'][i]['debtorId']"
+                                                                  [idInitialized]="debtorIdInitialized"
+                                                                  (isBusyStateChanged)="autoCompleteBusy = $event">
                                         </institution-autocomplete>
                                     </div>
-                                    <div class="list-action-buttons-container" fxFlex.gt-xs="9" fxFlex="9">
-                                        <button md-mini-fab color="warn" type="button" *ngIf="i > 0" mdTooltip="Remover devedor" type="button" (click)="removeDebtor(c)">
+                                    <div class="list-action-buttons-container"
+                                         fxFlex.gt-xs="9"
+                                         fxFlex="9">
+                                        <button md-mini-fab
+                                                color="warn"
+                                                type="button"
+                                                *ngIf="i > 0"
+                                                mdTooltip="Remover devedor"
+                                                type="button"
+                                                (click)="removeDebtor(c)">
                                         <md-icon>delete</md-icon>
                                     </button>
                                     </div>
@@ -94,17 +163,24 @@
                     </div>
                 </td-expansion-panel>
 
-                <td-expansion-panel label="Informações de emissão" expand="true">
+                <td-expansion-panel label="Informações de emissão"
+                                    expand="true">
                     <div class="md-padding">
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
                                 <form-datepicker label="*Data de emissão"
                                                  [control]="basicDataIssuingForm.controls['issuingDate']"
                                                  [errors]="formErrors['issuingDate']">
                                 </form-datepicker>
                             </div>
 
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
                                 <form-datepicker label="*Data de vencimento"
                                                  [control]="basicDataIssuingForm.controls['maturityDate']"
                                                  [errors]="formErrors['maturityDate']">
@@ -112,119 +188,158 @@
                             </div>
                         </div>
 
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
                                 <form-input label="*Valor da emissão"
                                             [control]="basicDataIssuingForm.controls['issuingValue']"
                                             [errors]="formErrors['issuingValue']">
                                 </form-input>
                             </div>
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <md-input-container class="full-wid">
-                                    <input mdInput placeholder="*Quantidade de emissão" [formControl]="basicDataIssuingForm.controls['issuingQuantity']">
-                                    <md-error *ngFor="let error of formErrors['issuingQuantity']">
-                                        {{error}}
-                                    </md-error>
-                                </md-input-container>
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <form-input label="*Quantidade de emissão"
+                                            [control]="basicDataIssuingForm.controls['issuingQuantity']"
+                                            [errors]="formErrors['issuingQuantity']">
+                                </form-input>
                             </div>
                         </div>
 
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <md-input-container class="full-wid">
-                                    <input mdInput placeholder="*Número da emissão" [formControl]="basicDataIssuingForm.controls['issuingNumber']">
-                                    <md-error *ngFor="let error of formErrors['issuingNumber']">
-                                        {{error}}
-                                    </md-error>
-                                </md-input-container>
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <form-input label="*Número da emissão"
+                                            [control]="basicDataIssuingForm.controls['issuingNumber']"
+                                            [errors]="formErrors['issuingNumber']">
+                                </form-input>
                             </div>
 
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <md-input-container class="full-wid">
-                                    <input mdInput placeholder="*Número da série da emissão" [formControl]="basicDataIssuingForm.controls['issuingSerialNumber']">
-                                    <md-error *ngFor="let error of formErrors['issuingSerialNumber']">
-                                        {{error}}
-                                    </md-error>
-                                </md-input-container>
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <form-input label="*Número da série da emissão"
+                                            [control]="basicDataIssuingForm.controls['issuingSerialNumber']"
+                                            [errors]="formErrors['issuingSerialNumber']">
+                                </form-input>
                             </div>
                         </div>
                     </div>
                 </td-expansion-panel>
 
-                <td-expansion-panel label="Custódia" expand="true">
+                <td-expansion-panel label="Custódia"
+                                    expand="true">
                     <div class="md-padding">
-
-                        <button md-button color="primary" mdTooltip="Adicionar custódia" type="button" (click)="addClearing()">
+                        <button md-button
+                                color="primary"
+                                mdTooltip="Adicionar custódia"
+                                type="button"
+                                (click)="addClearing()">
                             <md-icon>add</md-icon> Adicionar custódia
                         </button>
-
                         <ng-container formArrayName="clearings">
-                            <div *ngFor="let clearingForm of basicDataIssuingForm.controls['clearings'].controls; let i=index" fxLayout="row" fxLayoutWrap="wrap"
-                                fxLayoutAlign="space-between center">
+                            <div *ngFor="let clearingForm of basicDataIssuingForm.controls['clearings'].controls; let i=index"
+                                 fxLayout="row"
+                                 fxLayoutWrap="wrap"
+                                 fxLayoutAlign="space-between center">
                                 <ng-container [formGroupName]="i">
-                                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                        <clearing-select [label]="'*Câmara de custódia'" [clearingControl]="basicDataIssuingForm.controls['clearings'].controls[i].controls.clearingId">
+                                    <div fxFlex.gt-sm="49"
+                                         fxFlex.gt-xs="49"
+                                         fxFlex="100">
+                                        <clearing-select [label]="'*Câmara de custódia'"
+                                                         [clearingControl]="basicDataIssuingForm.controls['clearings'].controls[i].controls.clearingId">
                                         </clearing-select>
-                                        <md-error *ngFor="let error of formErrors['clearingId']">
+                                        <md-error *ngFor="let error of formArrayErrors['clearings'][i]['clearingId']">
                                             {{error}}
                                         </md-error>
                                     </div>
-                                    <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="100">
-                                        <md-input-container class="full-wid">
-                                            <input mdInput placeholder="Ticker da câmara de custódia" [formControl]="basicDataIssuingForm.controls['clearings'].controls[i].controls.clearingTicker">
-                                            <md-error *ngFor="let error of formErrors['clearingTicker']">
-                                                {{error}}
-                                            </md-error>
-                                        </md-input-container>
+                                    <div fxFlex.gt-sm="40"
+                                         fxFlex.gt-xs="40"
+                                         fxFlex="100">
+                                        <form-input label="Ticker da câmara de custódia"
+                                                    [control]="basicDataIssuingForm.controls['clearings'].controls[i].controls.clearingTicker"                                    
+                                                    [errors]="formArrayErrors['clearings'][i]['clearingTicker']">
+                                        </form-input>
                                     </div>
-                                    <div fxFlex.gt-sm="9" fxFlex.gt-xs="9" fxFlex="100" style="text-align: center;">
-                                        <button md-mini-fab color="warn" type="button" *ngIf="i > 0" mdTooltip="Remover câmara de custódia" type="button" (click)="removeClearing(clearingForm)">
-                                    <md-icon>delete</md-icon>
-                                </button>
-                                        <button md-mini-fab color="primary" type="button" mdTooltip="Adicionar câmara de custódia" type="button" *ngIf="i == 0" (click)="addClearing()">
-                                    <md-icon>add</md-icon>
-                                </button>
+                                    <div fxFlex.gt-sm="9"
+                                         fxFlex.gt-xs="9"
+                                         fxFlex="100"
+                                         style="text-align: center;">
+                                        <button md-mini-fab
+                                                color="warn"
+                                                type="button"
+                                                *ngIf="i > 0"
+                                                mdTooltip="Remover câmara de custódia"
+                                                type="button"
+                                                (click)="removeClearing(clearingForm)">
+                                        <md-icon>delete</md-icon>
+                                        </button>
                                     </div>
                                 </ng-container>
                             </div>
                         </ng-container>
                     </div>
                 </td-expansion-panel>
-                <td-expansion-panel label="Agentes e ISIN" expand="true">
+                <td-expansion-panel label="Agentes e ISIN"
+                                    expand="true">
                     <div class="md-padding">
-
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center" style="margin-top: 0.75em;">
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <institution-autocomplete [label]="'*Agente fiduciário'" [control]="basicDataIssuingForm.controls['fiduciaryAgent']" [controlErrors]="formErrors['fiduciaryAgent']"
-                                    [idInitialized]="fiduciaryAgentIdInitialized" (isBusyStateChanged)="autoCompleteBusy = $event">
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center"
+                             style="margin-top: 0.75em;">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <institution-autocomplete [label]="'*Agente fiduciário'"
+                                                          [control]="basicDataIssuingForm.controls['fiduciaryAgent']"
+                                                          [controlErrors]="formErrors['fiduciaryAgent']"
+                                                          [idInitialized]="fiduciaryAgentIdInitialized"
+                                                          (isBusyStateChanged)="autoCompleteBusy = $event">
                                 </institution-autocomplete>
                             </div>
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <negotiation-platform-select [label]="'*Plataforma de negocição'" [control]="basicDataIssuingForm.controls['negotiationPlatformId']">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <negotiation-platform-select [label]="'*Plataforma de negocição'"
+                                                             [control]="basicDataIssuingForm.controls['negotiationPlatformId']">
                                 </negotiation-platform-select>
-
                                 <md-error *ngFor="let error of formErrors['negotiationPlatformId']">
                                     {{error}}
                                 </md-error>
                             </div>
                         </div>
 
-                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                                <md-input-container class="full-wid">
-                                    <input mdInput placeholder="ISIN" [formControl]="basicDataInitialForm.controls['isin']">
-                                    <md-error *ngFor="let error of formErrors['isin']">
-                                        {{error}}
-                                    </md-error>
-                                </md-input-container>
+                        <div fxLayout="row"
+                             fxLayoutWrap="wrap"
+                             fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49"
+                                 fxFlex.gt-xs="49"
+                                 fxFlex="100">
+                                <form-input label="ISIN"
+                                            [control]="basicDataInitialForm.controls['isin']"
+                                            [errors]="formErrors['isin']">
+                                </form-input>                                
                             </div>
                         </div>
                     </div>
                 </td-expansion-panel>
 
-                <div layout="row" layout-margin layout-align="end center">
-                    <button md-button type="button" (click)="initialStep.open()">Voltar</button>
-                    <button md-button md-raised-button (click)="negotiationStep.open()" type="button">
+                <div layout="row"
+                     layout-margin
+                     layout-align="end center">
+                    <button md-button
+                            type="button"
+                            (click)="initialStep.open()">Voltar</button>
+                    <button md-button
+                            md-raised-button
+                            (click)="negotiationStep.open()"
+                            type="button">
                         Próximo 
                     </button>
                 </div>
@@ -232,14 +347,20 @@
             </td-expansion-panel-group>
         </form>
     </td-step>
-    <td-step #negotiationStep label="Remuneração" [state]="remunerationStepState" [disabled]="remunerationStepState || autoCompleteBusy">
+    <td-step #negotiationStep
+             label="Remuneração"
+             [state]="remunerationStepState"
+             [disabled]="remunerationStepState || autoCompleteBusy">
         <remuneration-items-management>
         </remuneration-items-management>
 
         <div class="pad-wrap">
             <md-card-actions>
-                <button md-button type="button">Voltar</button>
-                <button md-raised-button color="primary" type="submit">
+                <button md-button
+                        type="button">Voltar</button>
+                <button md-raised-button
+                        color="primary"
+                        type="submit">
                     Salvar
                 </button>
             </md-card-actions>

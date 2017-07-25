@@ -1,64 +1,84 @@
-<form [formGroup]="remunerationForm" class="remuneration-form" (submit)="saveRemunerationData(remunerationForm.value)">
+<form [formGroup]="remunerationForm"
+      class="remuneration-form">
     <ng-container formArrayName="remunerationGroup">
         <ng-container *ngFor="let remunerationFormItem of remunerationForm.controls['remunerationGroup'].controls; let i=index">
             <ng-container [formGroupName]="i">
-                <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <indexer-select [control]="remunerationFormItem.controls['indexerId']" label="*Indexador">
+                <div fxLayout="row"
+                     fxLayoutWrap="wrap"
+                     fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="99"
+                         fxFlex.gt-xs="99"
+                         fxFlex="100">
+                        <indexer-select [control]="remunerationFormItem.controls['indexerId']"
+                                        label="*Indexador">
                         </indexer-select>
-                        <!-- <md-select [formControl]="remunerationFormItem.controls['indexerId']" placeholder="*Indexador" class="full-wid">
-                            <md-option [value]="option.id" *ngFor="let option of indexerOptions">
-                                {{ option.code }}
-                            </md-option>
-                        </md-select> -->
-
                         <md-error *ngFor="let error of formErrors['indexerId']">
                             {{error}}
                         </md-error>
                     </div>
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <md-input-container class="full-wid">
-                            <input mdInput [mdDatepicker]="calculusDatepicker" placeholder="*Data de cálculo" [formControl]="remunerationFormItem.controls['calculusDate']">
-                            <button mdSuffix [mdDatepickerToggle]="calculusDatepicker"></button>
-                            <md-error *ngFor="let error of formArrayErrors['remunerationGroup'][i]['calculusDate']">
-                                {{error}}
-                            </md-error>
-                        </md-input-container>
-                        <md-datepicker #calculusDatepicker></md-datepicker>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutWrap="wrap"
+                     fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49"
+                         fxFlex.gt-xs="49"
+                         fxFlex="100">
+                        <form-input [control]="remunerationFormItem.controls['spreadFee']"
+                                    [errors]="formArrayErrors['remunerationGroup'][i]['spreadFee']"
+                                    label="*Taxa de spread">
+                        </form-input>
+                    </div>
+                    <div fxFlex.gt-sm="49"
+                         fxFlex.gt-xs="49"
+                         fxFlex="100">
+                        <form-input [control]="remunerationFormItem.controls['percentualValue']"
+                                    [errors]="formArrayErrors['remunerationGroup'][i]['percentualValue']"
+                                    label="*Taxa percentual">
+                        </form-input>                        
                     </div>
                 </div>
-                <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <md-input-container class="full-wid">
-                            <input mdInput placeholder="*Taxa de spread" [formControl]="remunerationFormItem.controls['spreadFee']">
-                            <md-error *ngFor="let error of formArrayErrors['remunerationGroup'][i]['spreadFee']">
-                                {{error}}
-                            </md-error>
-                        </md-input-container>
-                    </div>
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <md-input-container class="full-wid">
-                            <input mdInput placeholder="*Valor percentual" [formControl]="remunerationFormItem.controls['percentualValue']">
-                            <md-error *ngFor="let error of formArrayErrors['remunerationGroup'][i]['percentualValue']">
-                                {{error}}
-                            </md-error>
-                        </md-input-container>
+                <div fxLayout="row"
+                     fxLayoutWrap="wrap"
+                     fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49"
+                         fxFlex.gt-xs="49"
+                         fxFlex="100">
+                        <form-datepicker [control]="remunerationFormItem.controls['calculusDate']"
+                                         label="*Data de cálculo"
+                                         [errors]="formArrayErrors['remunerationGroup'][i]['calculusDate']">
+                        </form-datepicker>
                     </div>
                 </div>
-                <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <md-input-container class="full-wid">
-                            <input mdInput placeholder="*Dias de escalonamento" [formControl]="remunerationFormItem.controls['scalationDays']">
-                            <md-error *ngFor="let error of formArrayErrors['remunerationGroup'][i]['scalationDays']">
-                                {{error}}
-                            </md-error>
-                        </md-input-container>
+                <div fxLayout="row"
+                     fxLayoutWrap="wrap"
+                     fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49"
+                         fxFlex.gt-xs="49"
+                         fxFlex="100">
+                        <form-input [control]="remunerationFormItem.controls['scalationDays']"
+                                    label="*Dias de escalonamento"
+                                    [errors]="formArrayErrors['remunerationGroup'][i]['scalationDays']">
+                        </form-input>
                     </div>
-                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
-                        <button md-mini-fab color="warn" type="button" *ngIf="i > 0" mdTooltip="Remover valorização" type="button" (click)="removeRemunerationData(remunerationFormItem)">
+                    <div fxFlex.gt-sm="49"
+                         fxFlex.gt-xs="49"
+                         fxFlex="100">
+                        <button md-mini-fab
+                                color="warn"
+                                type="button"
+                                *ngIf="i > 0"
+                                mdTooltip="Remover valorização"
+                                type="button"
+                                (click)="removeRemunerationData(remunerationFormItem)">
                             <md-icon>delete</md-icon>
                         </button>
-                        <button md-mini-fab color="primary" type="button" mdTooltip="Adicionar valorização" type="button" *ngIf="i == 0" (click)="addRemunerationData()">
+                        <button md-mini-fab
+                                color="primary"
+                                type="button"
+                                mdTooltip="Adicionar valorização"
+                                type="button"
+                                *ngIf="i == 0"
+                                (click)="addRemunerationData()">
                             <md-icon>add</md-icon>
                         </button>
                     </div>
