@@ -1,0 +1,71 @@
+$backround-color:#eeeeee;
+$btn-border:1px solid rgba(0, 0, 0, 0.2);
+.asset-registration-form {
+
+    .gene-card-content {
+        md-tab-group.basic-data .mat-tab-body-wrapper {
+            margin-left: -1.5em;
+            margin-right: -1.5em;
+        }
+
+        md-tab-header {
+            margin-left: -1.5em;
+            margin-right: -1.5em;
+        }
+
+        .td-steps-header {            
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+
+        .mat-tab-label-container .mat-tab-label {
+            line-height: inherit;
+        }
+
+        .list-action-buttons-container {
+            text-align: center;
+        }
+    }
+
+    .md-checkbox-container {
+        margin-bottom: 0.5em;
+    }
+
+    .td-step-header.mat-disabled {
+        opacity: 0.4;
+    }
+
+    .mat-tab-header {
+        background-color: $backround-color;
+        margin-bottom: 3rem;
+    }
+
+    .mat-input-container {
+        margin-bottom: 1rem;
+    }
+
+    md-select {
+        padding-bottom: 0.496875em;
+    }
+    
+    td-step-body md-select span.mat-select-placeholder {
+        font-size: 16px;
+    }
+
+    div.td-step-content {
+        overflow: hidden;
+    }
+
+    .mat-button {
+        border: $btn-border;
+        margin: 0.3rem;
+    }
+
+    h5.form-checkpoint {
+        padding-left: 0;
+    }
+}
+
+body .asset-registration-form .mat-input-container {
+    font-size: 1rem;
+}

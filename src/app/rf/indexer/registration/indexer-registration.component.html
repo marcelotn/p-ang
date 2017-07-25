@@ -1,0 +1,55 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign=" start" class="indexer-registration-form">
+    <md-card fxFlex="100%">
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>{{header}}</h4>
+                </div> 
+                <span fxFlex></span> 
+            </div>
+            <md-divider></md-divider>
+        </div>
+        <div class="gene-card-content">
+            <form [formGroup]="form" (ngSubmit)="saveIndexer(form.value)">
+                <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Código do indexador(campo obrigatório)" 
+                                   [formControl]="form.controls['indexerCode']">
+                            <md-error *ngFor="let error of formErrors['indexerCode']">
+                                {{error}}
+                            </md-error>
+                        </md-input-container>
+                    </div>                    
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">                        
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Percentual do indexação(campo obrigatório)" 
+                                   [formControl]="form.controls['indexerPercentage']">
+                            <md-error *ngFor="let error of formErrors['indexerPercentage']">
+                                {{error}}
+                            </md-error>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">                    
+                    <div fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <textarea mdInput placeholder="Descrição do indexador(campo obrigatório)" 
+                                   [formControl]="form.controls['indexerDescription']">
+                            </textarea>
+                            <md-error *ngFor="let error of formErrors['indexerDescription']">
+                                {{error}}
+                            </md-error>
+                        </md-input-container>
+                    </div>
+                </div> 
+                <div class="pad-wrap">
+                    <md-card-actions>
+                        <button md-raised-button color="primary" type="submit" 
+                                [disabled]="!form.valid">Salvar</button>
+                    </md-card-actions>
+                </div>
+            </form>
+        </div>
+    </md-card>
+</div>

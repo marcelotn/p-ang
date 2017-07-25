@@ -1,0 +1,108 @@
+<div fxLayoutWrap="wrap" fxLayoutAlign="center start" class="gene-easy-page">
+    <div fxFlex.gt-md="50" fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Easy Pie Chart</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content text-center gene-relative">
+
+                <easy-pie-chart [percent]="percent" [options]="options"><span>70</span></easy-pie-chart>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-md="50" fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Easy Pie</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+
+
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content text-center gene-relative">
+                <span class="gene-absolute">70</span>
+                <easy-pie-chart [percent]="percent2" [options]="options2"><span class="percent" ng-bind="percent">70</span></easy-pie-chart>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayoutWrap="wrap" fxLayoutAlign="center start" class="gene-easy-page">
+    <div fxFlex.gt-md="50" fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Easy Pie</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+
+
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content text-center gene-relative">
+                <span class="gene-absolute">100</span>
+                <easy-pie-chart [percent]="percent3" [options]="options3"><span class="percent" ng-bind="percent">100</span></easy-pie-chart>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-md="50" fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Easy Pie</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+
+
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content text-center gene-relative">
+                <span class="gene-absolute">90</span>
+                <easy-pie-chart [percent]="percent4" [options]="options4"><span class="percent" ng-bind="percent">90</span></easy-pie-chart>
+            </div>
+        </md-card>
+    </div>
+</div>
+<md-menu #menu="mdMenu" x-position="before">
+   <button md-menu-item>
+      <md-icon>settings</md-icon> Settings </button>
+   <button md-menu-item>
+      <md-icon>more</md-icon> View More </button>
+   <button md-menu-item>
+      <md-icon>notifications_off</md-icon> Disable notifications </button>
+   <button md-menu-item>
+      <md-icon>exit_to_app</md-icon> Remove Panel </button>
+</md-menu>

@@ -1,16 +1,15 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "p-ang"
+    "version": "1.0.0",
+    "name": "Gene"
   },
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico",
-		"web.config"
+        "assets"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,16 +17,34 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "ms",
       "styles": [
-        "styles.css"
+        "../node_modules/@covalent/core/common/platform.css",
+        "assets/scss/style.scss",
+        "assets/scss/covalent.theme.scss",
+        "../node_modules/ngx-toastr/toastr.css",
+        "../node_modules/quill/dist/quill.snow.css",
+        "../node_modules/leaflet/dist/leaflet.css",
+        "../node_modules/angular-calendar/dist/css/angular-calendar.css",
+        "../node_modules/@swimlane/ngx-datatable/release/index.css",
+        "../node_modules/@swimlane/ngx-datatable/release/themes/material.css",
+        "../node_modules/nvd3/build/nv.d3.css",
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "assets/fonts/data-table/icons.css",
+        "../node_modules/dragula/dist/dragula.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/hammerjs/hammer.js",
+        "../node_modules/sortablejs/Sortable.js",
+        "../node_modules/chart.js/dist/Chart.bundle.min.js",
+        "../node_modules/easy-pie-chart/dist/easypiechart.js"
+      ],
       "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+        "environments": {
+          "dev": "environments/environment.ts",
+          "prod": "environments/environment.prod.ts"
+        }
     }
   ],
   "e2e": {
@@ -52,7 +69,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }

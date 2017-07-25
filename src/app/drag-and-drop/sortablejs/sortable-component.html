@@ -1,0 +1,52 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+   <div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="100" fxFlex.lg="50" fxFlex.xl="50" fxFlex="100" class="gene-sorted-drag-drop">
+      <md-card class="mat-green">
+         <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+               <div fxLayout="column">
+                  <h2>Drag and Drop Anything</h2></div> <span fxFlex></span> </div>
+            <md-divider></md-divider>
+         </div>
+         <md-list [sortablejs]="list1" [sortablejsOptions]="simpleOptions" class="no-gutter">
+            <md-list-item class="draggable" *ngFor="let list of list1">
+               <div>
+                  <md-icon>more_vert</md-icon>
+               </div>
+               <div> <img md-list-avatar [src]="list.image" alt="..."></div>
+               <div class="pad-wrap"> <span md-line class="gene-text-lg"> {{ list.name }} </span>
+                  <p md-line> <span> {{ list.subject }} </span> <span> -- {{ list.content }} </span> </p>
+                  <p md-line class="gene-text-md font-bold">5 min ago</p>
+               </div>
+            </md-list-item>
+         </md-list>
+      </md-card>
+   </div>
+   <div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="100" fxFlex.lg="50" fxFlex.xl="50">
+      <md-card>
+         <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+               <div fxLayout="column">
+                  <h2>Drag & Drop Between Groups!</h2></div> <span fxFlex></span> </div>
+            <md-divider></md-divider>
+         </div>
+         <div class="gene-card-content">
+           <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+               <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                  <md-toolbar>Group 1</md-toolbar>
+                  <md-list [sortablejs]="list2" [sortablejsOptions]="groupOptions">
+                     <md-list-item *ngFor="let list of list2">
+                        <h3 md-line> <md-icon class="drag-handle">drag_handle</md-icon> {{ list.name }} </h3> </md-list-item>
+                  </md-list>
+               </div>
+               <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                  <md-toolbar>Group 2</md-toolbar>
+                  <md-list [sortablejs]="numbers" [sortablejsOptions]="groupOptions">
+                     <md-list-item *ngFor="let list of numbers">
+                        <h3 md-line> <md-icon class="drag-handle">drag_handle</md-icon> {{ list.name }} </h3> </md-list-item>
+                  </md-list>
+               </div>
+            </div>
+         </div>
+      </md-card>
+   </div>
+</div>

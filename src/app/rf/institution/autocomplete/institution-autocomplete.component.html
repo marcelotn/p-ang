@@ -1,0 +1,17 @@
+<md-input-container class="full-wid">
+    <input mdInput placeholder="{{label}}" 
+           [mdAutocomplete]="institutionAuto" 
+           [formControl]="control"
+           (blur)="triggerValidationEvaluation()">
+    <md-spinner mdSuffix *ngIf="pendingRequests > 0"></md-spinner>    
+    <md-error *ngFor="let error of controlErrors">
+        {{error}}
+    </md-error>    
+</md-input-container>
+<md-autocomplete #institutionAuto="mdAutocomplete" 
+                 [displayWith]="displayEntityFunction">
+    <md-option *ngFor="let institution of filteredOptions | async" 
+               [value]="institution">
+        <span>{{ institution.code }}</span>
+    </md-option>
+</md-autocomplete>

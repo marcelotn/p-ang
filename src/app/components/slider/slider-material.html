@@ -1,0 +1,61 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Slider</h4>
+            </div> <span fxFlex></span>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p><code>md-slider</code> is a component that allows users to select from a range of values by moving the slider thumb</p>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Default Slider</h5>
+            Label
+            <md-slider #slidey></md-slider>
+            {{slidey.value}}
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Disable Slider</h5>
+            Label
+            <md-slider #slidey2 disabled></md-slider>
+            {{slidey2.value}}
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Slider with set value</h5>
+            <md-slider value="43"></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Slider with set tick interval</h5>
+            <md-slider tick-interval="auto"></md-slider>
+            <md-slider tick-interval="9"></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Inverted slider</h5>
+            <md-slider invert value="50" tick-interval="5"></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Vertical slide</h5>
+            <md-slider vertical thumb-label tick-interval="auto" value="50"></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Inverted vertical slider</h5>
+            <p>Inverted vertical slider</p>
+            <md-slider vertical invert thumb-label tick-interval="auto" value="50"></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Slider with Thumb Label</h5>
+            <md-slider thumb-label></md-slider>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Slider with one-way binding</h5>
+            <md-slider [value]="val" step="40"></md-slider>
+            <input [(ngModel)]="val">
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Slider with two-way binding</h5>
+            <md-slider [(ngModel)]="demo" step="40"></md-slider>
+            <input [(ngModel)]="demo">
+        </div>
+    </div>
+</md-card>

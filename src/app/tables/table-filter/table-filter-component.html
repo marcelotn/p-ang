@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+   <div fxFlex="100">
+     <div class="pad-all-md mat-white box-inset mrgn-b-sm">
+      <md-input-container class="full-wid">
+         <input mdInput type="text" placeholder='Type to filter the name column...' (keyup)='updateFilter($event)' /> </md-input-container>
+      </div>
+      <ngx-datatable #table class='material' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [rows]='rows'> </ngx-datatable>
+   </div>
+</div>

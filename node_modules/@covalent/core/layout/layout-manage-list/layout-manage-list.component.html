@@ -1,0 +1,24 @@
+<md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
+  <md-sidenav #sidenav
+              align="start"
+              [mode]="mode"
+              [opened]="opened"
+              [disableClose]="disableClose"
+              [style.max-width]="sidenavWidth"
+              [style.min-width]="sidenavWidth"
+              layout="column"
+              layout-fill
+              class="md-whiteframe-z1">
+    <ng-content select="md-toolbar[td-sidenav-content]"></ng-content>
+    <div flex class="list md-content" cdkScrollable>
+      <ng-content select="[td-sidenav-content]"></ng-content>
+    </div>
+  </md-sidenav>
+  <div layout="column" layout-fill class="md-content">
+    <ng-content select="md-toolbar"></ng-content>
+    <div class="md-content" flex cdkScrollable>
+      <ng-content></ng-content>
+    </div>
+    <ng-content select="td-layout-footer-inner"></ng-content>
+  </div>
+</md-sidenav-container>

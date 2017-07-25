@@ -1,0 +1,87 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Toolbar</h4>
+            </div> <span fxFlex></span>
+            <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+            <button md-icon-button>
+                  <md-icon>more_horiz</md-icon>
+               </button>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p> <code>MdToolbar</code> is a vertical aligned bar, which can hold the application title or actions.</p>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">The default color toolbar</h5>
+            <md-toolbar>
+                <button md-button href="#" md-icon-button>
+		  		<md-icon>menu</md-icon>
+			</button>
+                <span>Default Toolbar</span>
+                <span class="gene-spacer"></span>
+                <button md-button  md-icon-button>
+		  		<md-icon>search</md-icon>
+			</button>
+                <button md-button  md-icon-button>
+		  		<md-icon>more_vert</md-icon>
+			</button>
+            </md-toolbar>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">The primary color toolbar</h5>
+            <md-toolbar color="primary">
+                <button md-button href="#" md-icon-button>
+		  		<md-icon>menu</md-icon>
+			</button>
+                <span>Primary Toolbar</span>
+                <span class="gene-spacer"></span>
+                <button md-button md-icon-button>
+		 	 	<md-icon>search</md-icon>
+			</button>
+                <button md-button  md-icon-button>
+		  		<md-icon>more_vert</md-icon>
+			</button>
+            </md-toolbar>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">The accent color toolbar</h5>
+            <md-toolbar color="accent">
+                <button md-button href="#" md-icon-button>
+		  		<md-icon>menu</md-icon>
+			</button>
+                <span>Accent Toolbar</span>
+                <span class="gene-spacer"></span>
+                <button md-button  md-icon-button>
+		  		<md-icon>search</md-icon>
+			</button>
+                <button md-button  md-icon-button>
+		  		<md-icon>more_vert</md-icon>
+			</button>
+            </md-toolbar>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">An accent toolbar using the second toolbar row</h5>
+            <md-toolbar color="accent">
+                <md-toolbar-row>
+                    <span>Second Line Toolbar</span>
+                </md-toolbar-row>
+            </md-toolbar>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">A primary toolbar using the third toolbar row:</h5>
+            <md-toolbar color="primary">
+                <md-toolbar-row></md-toolbar-row>
+                <md-toolbar-row>
+                    <span class="gene-spacer">Third Line Toolbar</span>
+                    <md-icon>favorite</md-icon>
+                    <md-icon>delete</md-icon>
+                </md-toolbar-row>
+            </md-toolbar>
+        </div>
+    </div>
+</md-card>
+

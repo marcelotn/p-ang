@@ -1,0 +1,7 @@
+<md-select [formControl]="assetTypeControl" 
+           placeholder="{{label}}" 
+           class="full-wid">
+    <md-option [value]="option.id" *ngFor="let option of assetTypeOptions">
+        {{ option.code }}
+    </md-option>
+</md-select>

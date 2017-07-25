@@ -1,0 +1,81 @@
+<md-card class="gene-btn-wrapper">
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Buttons</h4>
+            </div> <span fxFlex></span>
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+
+    <div class="gene-card-content">
+        <p><code>md-button</code> is an HTML button or a tag enhanced with styling and animation to match the Material Design button spec</p>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Flat buttons</h5>
+            <button class="mrgn-all-xs" md-icon-button><md-icon>favorite</md-icon></button>
+            <button class="mrgn-all-xs" md-button>Default</button>
+            <button class="mrgn-all-xs" md-button color="primary">Primary</button>
+            <button class="mrgn-all-xs" md-button color="accent">Accent</button>
+            <button class="mrgn-all-xs" md-button color="warn">Warn</button>
+            <button class="mrgn-all-xs" md-button disabled>Disabled</button>
+        </div>
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Raised buttons</h5>
+            <button class="mrgn-all-xs" md-raised-button md-icon-button><md-icon>favorite</md-icon></button>
+            <button class="mrgn-all-xs" md-raised-button>Default</button>
+            <button class="mrgn-all-xs" md-raised-button color="primary">Primary</button>
+            <button class="mrgn-all-xs" md-raised-button color="accent">Accent</button>
+            <button class="mrgn-all-xs" md-raised-button color="warn">Warn</button>
+            <button class="mrgn-all-xs" md-raised-button disabled>Disabled</button>
+        </div>
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Small buttons</h5>
+            <button class="mrgn-all-xs" md-raised-button md-icon-button md-button-sm><md-icon>favorite</md-icon></button>
+            <button class="mrgn-all-xs" md-raised-button md-button-sm>Default</button>
+            <button class="mrgn-all-xs" md-raised-button md-button-sm color="primary">Primary</button>
+            <button class="mrgn-all-xs" md-raised-button md-button-sm color="accent">Accent</button>
+            <button class="mrgn-all-xs" md-raised-button md-button-sm color="warn">Warn</button>
+            <button class="mrgn-all-xs" md-raised-button md-button-sm disabled>Disabled</button>
+        </div>
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Fab buttons</h5>
+            <button class="mrgn-all-xs" md-fab><md-icon>add</md-icon></button>
+            <button class="mrgn-all-xs" md-fab disabled=""><md-icon>add</md-icon></button>
+            <button class="mrgn-all-xs" md-mini-fab><md-icon>add</md-icon></button>
+            <button class="mrgn-all-xs" md-mini-fab disabled><md-icon>add</md-icon></button>
+        </div>
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Button toggles</h5>
+            <md-button-toggle>Single toggle</md-button-toggle>
+            <md-button-toggle-group name="alignment" class="mrgn-all-xs">
+                <md-button-toggle value="left">
+                    <md-icon>format_align_left</md-icon>
+                </md-button-toggle>
+                <md-button-toggle value="center">
+                    <md-icon>format_align_center</md-icon>
+                </md-button-toggle>
+                <md-button-toggle value="right">
+                    <md-icon>format_align_right</md-icon>
+                </md-button-toggle>
+                <md-button-toggle value="justify">
+                    <md-icon>format_align_justify</md-icon>
+                </md-button-toggle>
+            </md-button-toggle-group>
+            <md-button-toggle-group multiple class="mrgn-all-xs">
+                <md-button-toggle>Flour</md-button-toggle>
+                <md-button-toggle>Eggs</md-button-toggle>
+                <md-button-toggle disabled>Sugar</md-button-toggle>
+                <md-button-toggle>Milk</md-button-toggle>
+            </md-button-toggle-group>
+        </div>
+    </div>
+</md-card>

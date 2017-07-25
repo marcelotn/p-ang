@@ -1,0 +1,17 @@
+<md-input-container class="full-wid">
+    <input mdInput placeholder="{{label}}" 
+           [mdAutocomplete]="pricingProcessModelAuto" 
+           [formControl]="control"
+           (blur)="triggerValidationEvaluation()">
+    <md-spinner mdSuffix *ngIf="pendingRequests > 0"></md-spinner>    
+    <md-error *ngFor="let error of controlErrors">
+        {{error}}
+    </md-error>    
+</md-input-container>
+<md-autocomplete #pricingProcessModelAuto="mdAutocomplete" 
+                 [displayWith]="displayEntityFunction">
+    <md-option *ngFor="let pricingProcessModel of filteredOptions | async" 
+               [value]="pricingProcessModel">
+        <span>{{ pricingProcessModel.code }}</span>
+    </md-option>
+</md-autocomplete>

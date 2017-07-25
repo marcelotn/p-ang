@@ -1,0 +1,48 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Checkbox</h4>
+            </div> <span fxFlex></span>
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p>md-checkbox is a Material Design selection control that allows users to make a binary choice for a predetermined conditioned</p>
+
+
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Checkbox configuration</h5>
+
+
+            <section class="example-section">
+                <md-checkbox class="example-margin" [(ngModel)]="checked">Checked</md-checkbox>
+                <md-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</md-checkbox>
+            </section>
+            <section class="example-section">
+                <label class="example-margin">Align:</label>
+                <md-radio-group [(ngModel)]="align">
+                    <md-radio-button class="example-margin" value="start">Start</md-radio-button>
+                    <md-radio-button class="example-margin" value="end">End</md-radio-button>
+                </md-radio-group>
+            </section>
+            <section class="example-section">
+                <md-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</md-checkbox>
+            </section>
+        </div>
+
+
+        <div class="box-inset pad-all-md mrgn-b-md">
+
+            <h5 class="mrgn-b-md">Result</h5>
+            <section class="example-section">
+                <md-checkbox class="example-margin" [checked]="checked" [indeterminate]="indeterminate" [align]="align" [disabled]="disabled">
+                    I'm a checkbox
+                </md-checkbox>
+            </section>
+        </div>
+    </div>
+</md-card>

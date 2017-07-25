@@ -1,0 +1,28 @@
+$grid-text-size:1.5rem;
+
+
+.gene-grid-item {
+    position: relative;
+    .gene-grid-hover {
+        position: absolute;
+        opacity: 0;
+        transition: all ease 500ms;
+    }
+    &:hover {
+        .gene-grid-hover {
+            opacity: 1;
+        }
+    }
+    .mat-grid-tile-footer {
+        bottom: 0;
+        height: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        text-align: center;
+        top: 0 !important;
+        justify-content: center;
+        h2 {
+            font-size: $grid-text-size !important;
+        }
+    }
+}

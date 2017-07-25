@@ -1,0 +1,7 @@
+<md-input-container class="full-wid">
+    <input mdInput placeholder="{{label}}" 
+           [formControl]="control">
+    <md-error *ngFor="let error of errors">
+        {{error}}
+    </md-error>
+</md-input-container>

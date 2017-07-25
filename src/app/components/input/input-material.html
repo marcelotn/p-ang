@@ -1,0 +1,69 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Input</h4>
+            </div> <span fxFlex></span>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p>Inputs are the basic input component of Material 2</p>
+        <form>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <input mdInput placeholder="Company (disabled)" disabled value="Google">
+                    </md-input-container>
+                </div>
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <input mdInput placeholder="First name">
+                    </md-input-container>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <input mdInput placeholder="Long Last Name That Will Be Truncated">
+                    </md-input-container>
+                </div>
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+                    </md-input-container>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <textarea mdInput placeholder="Address 2"></textarea>
+                    </md-input-container>
+                </div>
+
+
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <input mdInput placeholder="City">
+                    </md-input-container>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+
+                    <md-input-container class="full-wid">
+                        <input mdInput placeholder="State">
+                    </md-input-container>
+                </div>
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                    <md-input-container class="full-wid">
+                        <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                        <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+                    </md-input-container>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</md-card>

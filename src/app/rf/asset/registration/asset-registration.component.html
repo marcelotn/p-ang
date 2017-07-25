@@ -1,0 +1,122 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign=" start" class="asset-registration-form">
+    <md-card fxFlex="100%">
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>{{header}}</h4>
+                </div>
+                <span fxFlex></span>
+            </div>
+            <md-divider></md-divider>
+        </div>
+        <div class="gene-card-content">            
+            <md-tab-group [selectedIndex]="selectedIndex" (selectChange)="onLinkClick($event)" [ngClass]="{'basic-data': selectedIndex == 0}">
+                <md-tab label="Dados básicos">
+                    <asset-registration-basic-data [assetInitialized]="assetInitialized" (basicDataSubmitted)="handleBasicDataSubmission($event)"
+                        (basicDataChanged)="handleBasicDataChanged($event)">
+                    </asset-registration-basic-data>
+                </md-tab>
+                <!-- <md-tab label="Vigências">
+                    <form [formGroup]="validityForm">
+                        <ng-container formArrayName="validityGroup">
+                            <ng-container *ngFor="let validityFormItem of validityForm.controls['validityGroup'].controls; let i=index">
+                                <ng-container [formGroupName]="i">
+                                    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                                        <div fxFlex.gt-sm="99" fxFlex.gt-xs="99" fxFlex="100">
+                                            <pricing-process-model-autocomplete label="*Modelo de precificação" [control]="validityFormItem.controls['pricingProcessModel']"
+                                                [controlErrors]="formArrayErrors['validityGroup'][i]['pricingProcessModel']"
+                                                [idInitialized]="pricingProcessModelIdInitialized">
+                                            </pricing-process-model-autocomplete>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                            <md-input-container class="full-wid">
+                                                <input mdInput [mdDatepicker]="validityStartDatepicker" placeholder="*Data inicial" [formControl]="validityFormItem.controls['initialDate']"
+                                                    [max]="validityFormItem.controls['finalDate'].value">
+                                                <button mdSuffix [mdDatepickerToggle]="validityStartDatepicker"></button>
+                                                <md-error *ngFor="let error of formArrayErrors['validityGroup'][i]['initialDate']">
+                                                    {{error}}
+                                                </md-error>
+                                            </md-input-container>
+                                            <md-datepicker #validityStartDatepicker></md-datepicker>
+                                        </div>
+                                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                            <md-input-container class="full-wid">
+                                                <input mdInput [mdDatepicker]="validityFinalDatepicker" placeholder="*Data final" [formControl]="validityFormItem.controls['finalDate']"
+                                                    [min]="validityFormItem.controls['initialDate'].value">
+                                                <button mdSuffix [mdDatepickerToggle]="validityFinalDatepicker"></button>
+                                                <md-error *ngFor="let error of formArrayErrors['validityGroup'][i]['finalDate']">
+                                                    {{error}}
+                                                </md-error>
+                                            </md-input-container>
+                                            <md-datepicker #validityFinalDatepicker></md-datepicker>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+
+                        <div class="pad-wrap">
+                            <md-card-actions>
+                                <button md-button type="button" (click)="setStep(selectedIndex - 1)">
+                                    Voltar
+                                </button>
+                                <button md-raised-button color="primary" (click)="saveValidityData(validityForm.value)" type="submit" [disabled]="!validityForm.valid">
+                                    Salvar
+                                </button>
+                            </md-card-actions>
+                        </div>
+                    </form>
+                </md-tab> -->
+                <md-tab label="Ratings">
+                    <!-- <md-tab label="Ratings" [disabled]="!validityForm.valid || !validityDataSaved"> -->
+                    <form [formGroup]="ratingsForm">
+                        <ng-container formArrayName="ratings">
+                            <div *ngFor="let ratingForm of ratingsForm.controls['ratings'].controls; let i=index" fxLayout="row" fxLayoutWrap="wrap"
+                                fxLayoutAlign="space-between center">
+                                <ng-container [formGroupName]="i">
+                                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                        <md-input-container class="full-wid">
+                                            <input mdInput placeholder="*Rating" [formControl]="ratingsForm.controls['ratings'].controls[i].controls.ratingId">
+                                            <md-error *ngFor="let error of formErrors['ratingId']">
+                                                {{error}}
+                                            </md-error>
+                                        </md-input-container>
+                                    </div>
+                                    <div fxFlex.gt-sm="40" fxFlex.gt-xs="40" fxFlex="80">
+                                        <md-input-container class="full-wid">
+                                            <input mdInput placeholder="Observações" [formControl]="ratingsForm.controls['ratings'].controls[i].controls.ratingDescription">
+                                            <md-error *ngFor="let error of formErrors['ratingDescription']">
+                                                {{error}}
+                                            </md-error>
+                                        </md-input-container>
+                                    </div>
+                                    <div fxFlex.gt-sm="9" fxFlex.gt-xs="9" fxFlex="20" style="text-align: center;">
+                                        <button md-mini-fab color="warn" type="button" *ngIf="i > 0" mdTooltip="Remover rating" type="button" (click)="removeRating(ratingForm)">
+                                            <md-icon>delete</md-icon>
+                                        </button>
+                                        <button md-mini-fab color="primary" type="button" mdTooltip="Adicionar rating" type="button" *ngIf="i == 0" (click)="addRating()">
+                                            <md-icon>add</md-icon>
+                                        </button>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+
+                        <div class="pad-wrap">
+                            <md-card-actions>
+                                <button md-button type="button" (click)="setStep(selectedIndex - 1)">
+                                    Voltar
+                                </button>
+                                <button md-raised-button color="primary" type="submit" [disabled]="!ratingsForm.valid">
+                                    Salvar
+                                </button>
+                            </md-card-actions>
+                        </div>
+                    </form>
+                </md-tab>
+            </md-tab-group>
+        </div>
+    </md-card>
+</div>

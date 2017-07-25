@@ -1,0 +1,23 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Select</h4>
+            </div> <span fxFlex></span>
+
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p class="mrgn-b-lg">Select buttons allow the user to select one option from a set</p>
+        <form>
+            <md-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+                <md-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </md-option>
+            </md-select>
+            <p> Selected value: {{selectedValue}} </p>
+        </form>
+    </div>
+</md-card>

@@ -1,0 +1,472 @@
+<div class="gene-welcome-note pad-wrap">
+    <h2>Hi John, Welcome back</h2>
+    <p>Explore your own powerful admin panel and keep track of all activity</p>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start" class="dash-card">
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+        <md-card class="mat-blue-800">
+            <div md-card-widget>
+                <button md-mini-fab color="primary" class="inline-block" md-card-icon>
+               <md-icon>remove_red_eye</md-icon>
+            </button>
+                <div class="inline-block pad-wrap">
+                    <h5 md-card-widget-title class="mrgn-b-none">Today Views</h5>
+                    <h5>22,520</h5>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+        <md-card class="mat-red-600">
+            <div md-card-widget>
+                <button md-mini-fab color="primary" class="inline-block" md-card-icon>
+               <md-icon>attach_money</md-icon>
+            </button>
+                <div class="inline-block pad-wrap">
+                    <h5 md-card-widget-title class="mrgn-b-none">Revenue</h5>
+                    <h5>1,425</h5>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+        <md-card class="mat-cyan">
+            <div md-card-widget>
+                <button md-mini-fab color="primary" class="inline-block" md-card-icon>
+               <md-icon>assessment</md-icon>
+            </button>
+                <div class="inline-block pad-wrap">
+                    <h5 md-card-widget-title class="mrgn-b-none">Item Sales</h5>
+                    <h5>6,101</h5>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100">
+        <md-card class="mat-green">
+            <div md-card-widget>
+                <button md-mini-fab color="primary" class="inline-block" md-card-icon>
+               <md-icon>new_releases</md-icon>
+            </button>
+                <div class="inline-block pad-wrap">
+                    <h5 md-card-widget-title class="mrgn-b-none">New Orders</h5>
+                    <h5>5,218</h5>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Sample Full Width Graph</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                   <md-icon>sync</md-icon>
+                </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                   <md-icon>more_horiz</md-icon>
+                </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <canvas baseChart width="900" height="300" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="33.33%" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>To Do Lists</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <div class="todos">
+                    <ul class="gene-list">
+                        <li *ngFor="let todo of todos;">
+                            <md-checkbox class="checkbox" [(ngModel)]="todo.completed"></md-checkbox> <span [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span> </li>
+                    </ul>
+                    <div>
+                        <div class="list-insert-bar" fxFlex>
+                            <form class="to-do-form" (submit)="addTodo($event)" fxShow="false" fxShow.gt-xs>
+                                <md-input-container class="full-width">
+                                    <input mdInput type="text" placeholder="Add new item" [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo" /> </md-input-container>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="66.66%" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Live Chat Support</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+        <div class="gene-card-content">
+                <div fxLayout="row" fxLayoutAlign="start start" class="chat-list">
+                    <div class="chat-thumbnail"> <img class="img-responsive img-circle" src="assets/img/register-user-3.jpg" alt="User Image" width="64" height="64"> </div>
+                    <div class="pad-wrap chat-content">
+                        <h5 class="chat-text text-danger">Devy Finn</h5><span class="meta-post">10 Min ago</span>
+                        <div class="prtm-chat-content prtm-msg-block">
+                            <p>Hi There! Recently I updated the latest version of your app, it crashed every time when i open.Please help me out as soon as possible.....Thanks</p>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start start" class="receiver chat-list">
+                    <div class="chat-thumbnail"> <img class="img-responsive img-circle" src="assets/img/register-user-1.jpg" alt="User Image" width="64" height="64"> </div>
+                    <div class="pad-wrap chat-content">
+                        <h5 class="text-primary chat-text">Sam Brown</h5><span class="meta-post">8 Min ago</span>
+                        <div class="prtm-chat-content prtm-msg-block">
+                            <p>Hi Devy,Can you please tell us your mobile configuraion.So that We can help you better.Please Also specify Version of your phone....Thank You!</p>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start start" class="chat-list">
+                    <div class="chat-thumbnail"> <img class="img-responsive img-circle" src="assets/img/register-user-3.jpg" alt="User Image" width="64" height="64"> </div>
+                    <div class="pad-wrap chat-content">
+                        <h5 class="text-danger chat-text">Devy Finn</h5><span class="meta-post">7 Min ago</span>
+                        <div class="prtm-chat-content prtm-msg-block">
+                            <p>Thanks you for quick response .I using iPhone 6s and the version of this is 10.2 . Please fix this issue I need this right now....Thanks</p>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start start" class="chat-list receiver">
+                    <div class="chat-thumbnail"> <img class="img-responsive img-circle" src="assets/img/register-user-1.jpg" alt="User Image" width="64" height="64"> </div>
+                    <div class="pad-wrap chat-content">
+                        <h5 class="text-primary chat-text">Sam Brown</h5><span class="meta-post">6 Min ago</span>
+                        <div class="prtm-chat-content prtm-msg-block">
+                            <p>Please wait for some time. Our tecnical support team will contact you soon and fix the issue .Thanks for using our App.We will Assit You better</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="66.66" fxFlex.gt-md="66.66%" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Project Status</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content-sm gene-img-table">
+                <ngx-datatable class="material box-shadow-none" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0" [rowHeight]="'auto'">
+                    <ngx-datatable-column name="Project">
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template> {{row['project']}} </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Progress">
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                     <md-progress-bar mode="determinate" value="{{row['progress']}}" color="{{row['color']}}"></md-progress-bar> <span class="meta-post">{{row['name']}}</span> </ng-template>
+                    </ngx-datatable-column><span fxFlex></span>
+                    <ngx-datatable-column name="Team">
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template> <img class="thumb-gap" src="{{row['team-member1']}}" width="30px" height="30px"> <img class="thumb-gap" src="{{row['team-member2']}}" width="30px" height="30px"> <img class="thumb-gap" src="{{row['team-member3']}}" width="30px" height="30px"> <img class="thumb-gap" src="{{row['team-member4']}}" width="30px" height="30px"><img class="thumb-gap" src="{{row['team-member5']}}" width="30px" height="30px"><img class="thumb-gap" src="{{row['team-member6']}}" width="30px" height="30px"> </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-md="33.33%" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Team Member</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <md-list class="gene-team-list">
+                    <ng-template let-item let-last="last" ngFor [ngForOf]="team">
+                  <md-list-item class="pad-none"> <img md-list-avatar src="{{item.photo}}" alt="">
+                     <h3 md-line> {{item.name}} </h3>
+                     <p md-line class="meta-post"> {{item.post}}</p>
+                  </md-list-item>
+               </ng-template>
+                </md-list>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <md-card class="mat-cyan">
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4 class="text-inverse">Yearly Sales <span class="inline-block mrgn-l-sm">+2.99%</span></h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon class="text-inverse">more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <canvas width="300" height="200" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barStackChartOptions" [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"> </canvas>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Sales Report<span class="inline-block mrgn-l-sm text-alert">+458.99</span></h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <canvas height="200" baseChart [datasets]="bubbleChartData" [labels]="lineChartLabels" [options]="bubbleChartOptions" [colors]="bubbleChartColors" [legend]="lineChartLegend" [chartType]="bubbleChartType"></canvas>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Global Locations</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <div fxLayout="row">
+                    <div fxFlex.gt-sm="100" fxFlex="100">
+                        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="9" [scrollwheel] ="false" [styles]="customStyle">
+                            <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'assets/img/marker-icon.png'"></agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="33.33"  fxFlex.gt-xs="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Email Statistics</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <canvas baseChart height="245" [data]="doughnutChartData" [labels]="doughnutChartLabels" [options]="doughnutChartOptions" [colors]="doughnutChartColors" [chartType]="doughnutChartType"></canvas>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Traffic Sources</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <p>Direct</p><span fxFlex></span>
+                    <div>
+                        <md-icon class="text-alert">arrow_drop_up</md-icon><span class="gene-span mrgn-l-xs">30%</span></div>
+                </div>
+                <md-progress-bar mode="determinate" value="30" class="gene-progess-md" color="primary"></md-progress-bar>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <p>Referral</p><span fxFlex></span>
+                    <div>
+                        <md-icon class="text-danger">arrow_drop_down</md-icon><span class="gene-span mrgn-l-xs">20%</span></div>
+                </div>
+                <md-progress-bar mode="determinate" value="20" class="gene-progess-md" color="warn"></md-progress-bar>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <p>Social</p><span fxFlex></span>
+                    <div>
+                        <md-icon class="text-alert">arrow_drop_up</md-icon><span class="gene-span mrgn-l-xs">60</span></div>
+                </div>
+                <md-progress-bar mode="determinate" value="60" class="gene-progess-md" color="accent"></md-progress-bar>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <p>Internet</p><span fxFlex></span>
+                    <div>
+                        <md-icon class="text-alert">arrow_drop_up</md-icon><span class="gene-span mrgn-l-xs">70%</span></div>
+                </div>
+                <md-progress-bar mode="determinate" value="70" class="gene-progess-md mat-cyan" color="primary"></md-progress-bar>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <p>Ads</p><span fxFlex></span>
+                    <div>
+                        <md-icon class="text-alert">arrow_drop_up</md-icon><span class="gene-span mrgn-l-xs">85%</span></div>
+                </div>
+                <md-progress-bar mode="determinate" value="85" class="gene-progess-md mat-blue-800"  color="warn"></md-progress-bar>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Notifications</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content text-inverse-all">
+              <md-list class="gene-theme-list mrgn-b-lg">
+                    <md-list-item class="mat-red-600">
+                        <div> Site goes is down for 6 hours due to maintainance and bug fixing.Please Check </div>
+                    </md-list-item>
+                    <md-list-item class="mat-green">
+                        <div> New users from March is promoted as special benefit under promotional offer of 30%. </div>
+                    </md-list-item>
+                    <md-list-item class="mat-blue-800">
+                        <div> Bug detected from the development team at the cart module of Fashion store. </div>
+                    </md-list-item>
+                </md-list>
+                <div class="text-center mrgn-b-lg">  <button class="mrgn-all-xs meta-post" md-button>View All Notfications</button></div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card class="mat-blue-800">
+            <div md-card-widget fxLayout="row" fxLayoutAlign="start center">
+                <div><span class="sq-50 inline-block"><i class="fa fa-facebook"></i></span> <span class="lead lead inline-block mrgn-l-sm">FACEBOOK</span></div><span fxFlex></span>
+                <div><span class="lead">41</span> </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card class="mat-cyan">
+            <div md-card-widget fxLayout="row" fxLayoutAlign="start center">
+                <div><span class="sq-50 inline-block"><i class="fa fa-twitter"></i></span> <span class="lead lead inline-block mrgn-l-sm">TWITTER</span></div><span fxFlex></span>
+                <div><span class="lead">87</span> </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card class="mat-red-600">
+            <div md-card-widget fxLayout="row" fxLayoutAlign="start center">
+                <div><span class="sq-50 inline-block"><i class="fa fa-google-plus"></i></span> <span class="lead lead inline-block mrgn-l-sm">GOOGLE PLUS</span></div><span fxFlex></span>
+                <div><span class="lead">17</span> </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="33.33" fxFlex="100" *ngFor=" let list of list">
+        <md-card class="pad-t-none">
+            <div class="gene-thumb no-gutter"><img src="{{list.photo}}"></div>
+            <div class="gene-card-content">
+                <h3>{{list.title}}</h3>
+                <p>{{list.desc}}</p> <span class="meta-post">By: {{list.author}}, {{list.postdate}}</span> </div>
+            <div class="gene-card-footer">
+                <md-divider></md-divider>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div>
+                        <button md-icon-button>
+                     <md-icon>share</md-icon>
+                  </button>
+                        <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>favorite</md-icon>
+                  </button>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<md-menu #options="mdMenu" x-position="before">
+    <button md-menu-item>
+      <md-icon>settings</md-icon> Settings </button>
+    <button md-menu-item>
+      <md-icon>more</md-icon> View More </button>
+    <button md-menu-item>
+      <md-icon>notifications_off</md-icon> Disable notifications </button>
+    <button md-menu-item>
+      <md-icon>exit_to_app</md-icon> Remove Panel </button>
+</md-menu>

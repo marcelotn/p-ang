@@ -1,0 +1,22 @@
+$backround-color:#eeeeee;
+$btn-border:1px solid rgba(0, 0, 0, 0.2);
+.indexer-registration-form {
+    .mat-tab-header {
+        background-color: $backround-color;
+        margin-bottom: 3rem;
+    }
+    .mat-input-container {
+        margin-bottom: 1rem;
+    }
+    md-select {
+        padding-bottom: 0.496875em;
+    }
+    .mat-button {
+        border: $btn-border;
+        margin: 0.3rem;
+    }
+}
+
+body .indexer-registration-form .mat-input-container {
+    font-size: 1rem;
+}

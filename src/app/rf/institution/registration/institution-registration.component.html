@@ -1,0 +1,130 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start" class="gene-form-wizard issuer-registration-form">
+    <md-card fxFlex="100%">
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>{{header}}</h4>
+                </div>
+                <span fxFlex></span>
+            </div>
+            <md-divider></md-divider>
+        </div>
+        <div class="gene-card-content">
+            <md-tab-group [selectedIndex]="selectedIndex" (selectChange)="onLinkClick($event)">
+                <md-tab label="Test 1">
+                    <form [formGroup]="form1">
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Código da pessoa" [formControl]="form1.controls['personCode']">
+                                    <md-error *ngFor="let error of formErrors['personCode']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Razão social" [formControl]="form1.controls['socialName']">
+                                    <md-error *ngFor="let error of formErrors['socialName']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Nome da Instituição" [formControl]="form1.controls['institutionName']">
+                                    <md-error *ngFor="let error of formErrors['institutionName']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Nome resumido da instituição" [formControl]="form1.controls['shortInstitutionName']">
+                                    <md-error *ngFor="let error of formErrors['shortInstitutionName']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Codigo da Instituição" [formControl]="form1.controls['institutionCode']">
+                                    <md-error *ngFor="let error of formErrors['institutionCode']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*CNPJ da instituição" [textMask]="{mask: cnpjMask}" [formControl]="form1.controls['institutionCnpj']">
+                                    <md-error *ngFor="let error of formErrors['institutionCnpj']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <economic-activity-autocomplete [control]="form1.controls['economicActivity']"
+                                                                [controlErrors]="formErrors['economicActivity']"
+                                                                [idInitialized]="economicActivityIdInitialized">
+                                </economic-activity-autocomplete>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="start">
+                            <button md-button type="button" disabled>Voltar </button>
+                            <button md-button md-raised-button [disabled]="!form1.valid" (click)="nextStep()" type="button">Próximo </button>
+                        </div>
+                    </form>
+                </md-tab>
+                <md-tab label="Test 2" [disabled]="!form1.valid">
+                    <form [formGroup]="form2">
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Telefone de contato" [textMask]="{mask: brPhoneMask}" [formControl]="form2.controls['contactPhoneNumber']">
+                                    <md-hint align="start">
+                                        +__ (__) ____-____
+                                    </md-hint>
+                                    <md-error *ngFor="let error of formErrors['contactPhoneNumber']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                            <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                                <md-input-container class="full-wid">
+                                    <input mdInput placeholder="*Código Mnemônico" [formControl]="form2.controls['mnemonicCode']">
+                                    <md-error *ngFor="let error of formErrors['mnemonicCode']">
+                                        {{error}}
+                                    </md-error>
+                                </md-input-container>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="start">
+                            <button md-button type="button" (click)="setStep(selectedIndex - 1)">
+                                Voltar
+                            </button>
+                            <button md-button md-raised-button [disabled]="!form2.valid" (click)="nextStep()" type="button">Próximo</button>
+                        </div>
+                    </form>
+                </md-tab>
+                <md-tab label="Concluído" [disabled]="!form2.valid">
+                    <div fxLayout="column">
+                        <div class="custom-pad text-center">
+                            <h1>Congratulations!</h1>
+                            <p>You submitted your form successfully.</p>
+                        </div>
+                    </div>
+                </md-tab>
+            </md-tab-group>
+        </div>
+    </md-card>
+</div>

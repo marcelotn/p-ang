@@ -1,0 +1,51 @@
+<md-card>
+   <div class="gene-card-title">
+      <div>
+         <div fxLayout="column">
+            <h4>Horizontal Drag and Drop Container</h4></div> <span fxFlex></span> </div>
+      <md-divider></md-divider>
+   </div>
+   <div class="gene-card-content gene-dragula">
+      <div fxLayout="row" fxLayoutWrap="wrap">
+         <div fxFlex.gt-sm="50" fxFlex="100">
+            <div class="mrgn-all-md">
+               <h2 class="mrgn-b-md">Project A</h2>
+               <div class="inner-block">
+                  <md-list [dragula]='"dragable-bag"'>
+                     <md-list-item *ngFor="let grp of group1">
+                        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                           <div fxFlex>
+                              <md-checkbox>{{ grp.name }}<span class="gene-block">{{ grp.des }}</span></md-checkbox>
+                              
+                           </div>
+                           <div>
+                              <md-icon>drag_handle</md-icon>
+                           </div>
+                        </div>
+                     </md-list-item>
+                  </md-list>
+               </div>
+            </div>
+         </div>
+         <div fxFlex.gt-sm="50" fxFlex="100">
+            <div class="mrgn-all-md">
+               <h2 class="mrgn-b-md">Project B</h2>
+               <div class="inner-block">
+                  <md-list [dragula]='"dragable-bag"'>
+                     <md-list-item *ngFor="let grp2 of group2">
+                        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                           <div fxFlex>
+                              <md-checkbox>{{ grp2.name }}<span class="gene-block">{{ grp2.des }}</span></md-checkbox>
+                           </div>
+                           <div>
+                              <md-icon>drag_handle</md-icon>
+                           </div>
+                        </div>
+                     </md-list-item>
+                  </md-list>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</md-card>

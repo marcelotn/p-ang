@@ -1,0 +1,66 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Progress Elements</h4>
+            </div> <span fxFlex></span>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h2 class="mrgn-b-md">Progress circle</h2>
+            <p>md-progress-spinner is a component for indicating progress and activity, matching the spec of Material Design Progress & Activity.</p>
+            <h5>Determinate</h5>
+            <div class="mrgn-b-lg">
+                <div fxLayout="row">
+                    <md-progress-spinner mode="determinate" [value]="value" class="primary"></md-progress-spinner>
+                    <md-progress-spinner mode="determinate" [value]="value" color="accent"></md-progress-spinner>
+                    <md-progress-spinner mode="determinate" [value]="value" color="warn"></md-progress-spinner>
+                </div>
+            </div>
+            <button md-raised-button (click)="step(10)">Increase</button>
+            <button class="mrgn-all-xs" md-raised-button (click)="step(-10)">Decrease</button>
+            <div class="mrgn-b-lg"></div>
+            <h5>Indeterminate</h5>
+            <div>
+                <div fxLayout="row">
+                    <md-progress-spinner mode="indeterminate" class="primary"></md-progress-spinner>
+                    <md-progress-spinner mode="indeterminate" color="accent"></md-progress-spinner>
+                    <md-progress-spinner mode="indeterminate" color="warn"></md-progress-spinner>
+                </div>
+            </div>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h2 class="mrgn-b-md">Progress bar</h2>
+            <p class="mrgn-b-lg">md-progress-bar is a component for indicating progress and activity, matching the spec of Material Design Progress & Activity</p>
+            <h5>Determinate</h5>
+            <md-progress-bar mode="determinate" [value]="determinateValue" color="primary" class="mrgn-b-md">
+            </md-progress-bar>
+            <button md-raised-button (click)="stepDeterminateVal(10)">Increase</button>
+            <button class="mrgn-all-xs" md-raised-button (click)="stepDeterminateVal(-10)">Decrease</button>
+            <div class="mrgn-b-lg"></div>
+            <h5>Buffer</h5>
+            <md-progress-bar [value]="bufferValue" [bufferValue]="bufferBufferValue" mode="buffer" color="warn" class="mrgn-b-md">
+            </md-progress-bar>
+            <div fxLayout="row" fxLayoutWrap="wrap" class="mrgn-b-lg">
+                <button md-raised-button (click)="stepBufferVal(10)">Increase</button>
+                <button class="mrgn-all-xs" md-raised-button (click)="stepBufferVal(-10)">Decrease</button>
+                <span fxFlex></span>
+                <button class="mrgn-all-xs" md-raised-button (click)="stepBufferBufferVal(10)">Increase</button>
+                <button class="mrgn-all-xs" md-raised-button (click)="stepBufferBufferVal(-10)">Decrease</button>
+            </div>
+
+
+            <h5>Indeterminate</h5>
+
+            <md-progress-bar mode="indeterminate" class="mrgn-b-md"></md-progress-bar>
+            <h5>Query</h5>
+            <md-progress-bar mode="query" class="mrgn-b-md"></md-progress-bar>
+            <h5>Colors</h5>
+            <md-progress-bar mode="indeterminate" color="primary"></md-progress-bar>
+            <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
+            <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
+        </div>
+    </div>
+</md-card>

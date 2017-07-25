@@ -1,0 +1,18 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Tooltips</h4>
+            </div> <span fxFlex></span>
+
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p class="mrgn-b-lg"> Tooltip allows the user to specify text to be displayed when the mouse hovers over an element.</p>
+        <button #tooltip="mdTooltip" md-raised-button color="primary" md-tooltip="to see a tooltip" tooltip-position="below">
+      	Mouse over to see the tooltip
+    	</button>
+    </div>
+</md-card>

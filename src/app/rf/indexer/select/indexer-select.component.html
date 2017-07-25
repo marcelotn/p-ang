@@ -1,0 +1,7 @@
+<md-select [formControl]="control" 
+           placeholder="{{label}}" 
+           class="full-wid">
+    <md-option [value]="option.id" *ngFor="let option of options">
+        {{ option.code }}
+    </md-option>
+</md-select>

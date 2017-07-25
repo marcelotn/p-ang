@@ -1,0 +1,471 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="center stretch">
+    <div fxFlex="100%" fxFlex.md="49.5%" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <ms-pie-chart [data]="pieChartDemoData" title="Audience" textColor="#222328"></ms-pie-chart>
+        </md-card>
+    </div>
+    <div fxFlex="100%" fxFlex.md="49.5%" fxFlex.sm="100%" fxFlex.gt-md>
+        <div>
+            <md-card>
+                <div class="gene-card-title">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <div fxLayout="column">
+                            <h4>Quantity Sold</h4>
+                        </div> <span fxFlex></span>
+                        <button md-icon-button>
+                     <md-icon>sync</md-icon>
+                  </button>
+                        <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>more_horiz</md-icon>
+                  </button>
+                    </div>
+                    <md-divider></md-divider>
+                </div>
+                <div class="gene-card-content">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <div fxLayout="column">
+                            <div class="gene-relative gene-easy-pie"><span class="gene-absolute font-bold">40%</span>
+                                <easy-pie-chart [percent]="percent1" [options]="options1"></easy-pie-chart>
+                            </div>
+                        </div>
+                        <div class="mrgn-l-md">
+                            <h3>4216/10,540</h3>
+                            <p class="mat-text-warn gene-text-xl">-2% Than last year</p>
+                        </div>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+        <div>
+            <md-card>
+                <div class="gene-card-title">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <div fxLayout="column">
+                            <h4>Grow Sales</h4>
+                        </div> <span fxFlex></span>
+                        <button md-icon-button>
+                     <md-icon>sync</md-icon>
+                  </button>
+                        <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>more_horiz</md-icon>
+                  </button>
+                    </div>
+                    <md-divider></md-divider>
+                </div>
+                <div class="gene-card-content">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <div fxLayout="column">
+                            <div class="gene-relative gene-easy-pie"><span class="gene-absolute font-bold">68%</span>
+                                <easy-pie-chart [percent]="percent2" [options]="options2"></easy-pie-chart>
+                            </div>
+                        </div>
+                        <div class="mrgn-l-md">
+                            <h2>$45,815</h2>
+                            <p class="gene-text-xl">+2.5% Than last year</p>
+                        </div>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    <div fxFlex="100%" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div fxLayout="column">
+                        <h4>Grow Sales</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content user-profile-wrap">
+                <div fxLayout="row" fxLayoutAlign="start center" class="mat-blue-800 no-gutter user-profile-content">
+                    <div fxLayout="column"> <img src="assets/img/user-12.jpg" class="img-circle"></div>
+                    <div class="mrgn-l-md">
+                        <h3>Emmi Michel</h3> <span>Senior Developer</span></div>
+                </div>
+                <ul class="user-profile-list list-style-none pad-t-md">
+                    <li> <span>524 barrows Causway</span> </li>
+                    <li> <span>loremipsum@example.org</span> </li>
+                    <li> <span>123-4569-7890</span> </li>
+                </ul>
+                <div class="social-icons mrgn-b-md">
+                    <ul class="gene-list list-inline">
+                        <li> <a><i class="fa fa-facebook"></i>556</a> </li>
+                        <li> <a><i class="fa fa-pinterest"></i>62</a> </li>
+                        <li> <a><i class="fa fa-twitter"></i>108</a> </li>
+                    </ul>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <button md-button class="mat-blue-800">Send Message</button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex="100%" fxFlex.lg="50" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <md-card-title>Browser Stack</md-card-title>
+            <md-card-content>
+                <canvas height="125" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barStackChartOptions" [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div fxFlex="100%" fxFlex.lg="50" fxFlex.sm="100%" fxFlex.gt-md>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutWrap>
+            <div fxFlex.gt-sm="50" fxFlex="100">
+                <md-card class="mat-blue-grey-800">
+                    <div class="social-stats">
+                        <div class="social-top mrgn-b-md">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <div fxLayout="column"> <i class="fa fa-facebook  fa-2x"></i> </div>
+                                <h3 class="mrgn-l-md">Facebook</h3>
+                            </div>
+                        </div>
+                        <div class="social-bottom"> <span class="gene-block">Budget: $4650</span> <span class="gene-block"><i class="fa fa-long-arrow-up"></i>2.40</span> </div>
+                    </div>
+                </md-card>
+            </div>
+            <div fxFlex.gt-sm="50" fxFlex="100">
+                <md-card class="mat-blue-grey-800">
+                    <div class="social-stats">
+                        <div class="social-top mrgn-b-md">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <div fxLayout="column"> <i class="fa fa-google-plus  fa-2x"></i> </div>
+                                <h3 class="mrgn-l-md">Google +</h3>
+                            </div>
+                        </div>
+                        <div class="social-bottom"> <span class="gene-block">Budget: $2875</span> <span class="gene-block"><i class="fa fa-long-arrow-up"></i>1.58</span> </div>
+                    </div>
+                </md-card>
+            </div>
+            <div fxFlex.gt-sm="50" fxFlex="100">
+                <md-card class="mat-blue-grey-800">
+                    <div class="social-stats">
+                        <div class="social-top mrgn-b-md">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <div fxLayout="column"> <i class="fa fa-twitter  fa-2x"></i> </div>
+                                <h3 class="mrgn-l-md">Twitter</h3>
+                            </div>
+                        </div>
+                        <div class="social-bottom"> <span class="gene-block">Budget: $1024</span> <span class="gene-block"><i class="fa fa-long-arrow-up"></i>1.08</span> </div>
+                    </div>
+                </md-card>
+            </div>
+            <div fxFlex.gt-sm="50" fxFlex="100">
+                <md-card class="mat-blue-grey-800">
+                    <div class="social-stats">
+                        <div class="social-top mrgn-b-md">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <div fxLayout="column"> <i class="fa fa-youtube  fa-2x"></i> </div>
+                                <h3 class="mrgn-l-md">Youtube</h3>
+                            </div>
+                        </div>
+                        <div class="social-bottom"> <span class="gene-block">Budget: $4047</span> <span class="gene-block"><i class="fa fa-long-arrow-up"></i>3.88</span> </div>
+                    </div>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex="100%" fxFlex.md="49.5%" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>Chating</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content dash-chat">
+                <div *ngFor=" let chat of chats" [ngClass]="{'gene-sender': chat.admin }">
+                    <div fxLayout="row" fxLayoutAlign="start start" class="mrgn-b-md">
+                        <div class="dash-thumb"> <img class="img-circle" src="{{chat.photo}}" alt="User Image" width="50" height="50"> </div>
+                        <div class="pad-wrap dash-content">
+                            <div class="">
+                                <div class="pad-all-md border-rad-base" [ngClass]="{'mat-blue-800': chat.admin === true, 'mat-cyan': chat.admin=== false }">
+                                    <h5 class="">{{chat.title}}</h5>
+                                    <p class="margin-none">{{chat.desc}}</p>
+                                </div>
+                                <div> <span class="meta-post">{{chat.chatdate}} <i class="fa fa-reply mrgn-l-r-sm" aria-hidden="true"></i></span> </div>
+                            </div>
+                        </div> <span fxFlex></span> </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex="100%" fxFlex.md="49.5%" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>Message</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content msg-wrapper">
+                <div *ngFor=" let msg of message">
+                    <div fxLayout="row" fxLayoutAlign="start start" class="mrgn-b-md gene-relative msg-wrap-list">
+                        <div class="dash-thumb gene-relative"> <img class="img-circle" src="{{msg.photo}}" alt="User Image" width="50" height="50"> <i class="fa fa-circle gene-absolute mat-text-warn"></i></div>
+                        <div class="pad-wrap dash-content">
+                            <div class="border-rad-base">
+                                <h5 class="meta-post">{{msg.title}}</h5>
+                                <p class="margin-none">{{msg.desc}}</p>
+                            </div>
+                            <div> <span class="meta-post">{{msg.msgdate}}</span> </div> <a href="#/" class="gene-absolute mat-text-primary"><i class="fa fa-reply mrgn-l-r-sm" aria-hidden="true"></i></a> </div> <span fxFlex></span> </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex="100%" fxFlex.sm="100%" fxFlex.gt-md>
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>Ticket</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <div *ngFor=" let ticket of tickets">
+                    <div fxLayout="row" fxLayoutAlign="start start" class="mrgn-b-md gene-relative msg-wrap-list">
+                        <div class="dash-thumb gene-relative"> <img class="img-circle" src="{{ticket.photo}}" alt="User Image" width="50" height="50"> </div>
+                        <div class="pad-wrap dash-content">
+                            <div class="border-rad-base">
+                                <h5 class="meta-post">{{ticket.title}}</h5>
+                                <p>{{ticket.desc}}</p>
+                            </div>
+                            <div> <span class="label mat-blue-800 border-rad-base">{{ticket.status}}</span> </div>
+                        </div> <span fxFlex></span> </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card>
+            <div class="gene-wheather-widget">
+                <div fxLayout="row" fxLayoutAlign="start center gene-today-wheather">
+                    <div fxLayout="column">
+                        <h2>Monday</h2>
+                        <h2>7th May 2017</h2>
+                        <h2>12:26 PM</h2>
+                    </div> <span fxFlex></span>
+                    <div class="current-day  gene-relative"> <img src="assets/img/rain-snow.png" alt="Wheathe icon" width="270" height="270"> <span class="current-temp gene-absolute">32F</span> </div>
+                    <md-divider></md-divider>
+                </div>
+                <div class="wheather-info">
+                    <h5 class="mrgn-b-lg">Weather info</h5>
+                    <ul class="gene-list">
+                        <li><span class="info-head"></span> Wind <span class="info-data">16km/h</span></li>
+                        <li><span class="info-head"></span> Sunrise <span class="info-data">07:15</span></li>
+                        <li><span class="info-head"></span> Humanfeel <span class="info-data">32F</span></li>
+                        <li><span class="info-head"></span> Sunset <span class="info-data">21</span></li>
+                        <li><span class="info-head"></span> Pressure <span class="info-data">22In</span></li>
+                    </ul>
+
+                </div>
+                <div class="wheather-future-day">
+                    <ul class="list-inline-block gene-list">
+                        <li>
+                            <img src="assets/img/hail.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Tue</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/hail.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Wed</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/partly-cloudy.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Thu</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/hail.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Fri</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/partly-sunny.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Sat</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/hail.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Sun</span>
+                        </li>
+                        <li>
+                            <img src="assets/img/hail.png" alt="Wheathe icon" width="270" height="270">
+                            <span class="gene-block">Mon</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>User Activity</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                     <md-icon>sync</md-icon>
+                  </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>more_horiz</md-icon>
+                  </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content activity-wrappper">
+                <div *ngFor=" let activity of activities">
+                    <div fxLayout="row" fxLayoutAlign="start start" class="mrgn-b-md gene-relative msg-wrap-list">
+                        <div class="dash-thumb gene-relative"> <img class="img-circle" src="{{activity.photo}}" alt="User Image" width="50" height="50"> </div>
+                        <div class="pad-wrap dash-content">
+                            <div class="border-rad-base"> <span class="mat-text-primary gene-text-xl">{{activity.title}}</span>
+                                <p>{{activity.desc}}</p>
+                            </div>
+                            <div> <span class="meta-post">{{activity.activitydate}}</span> </div>
+                        </div> <span fxFlex></span> </div>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <div fxLayout="row"  fxLayoutWrap="wrap" fxLayoutAlign="start center">
+            <div  fxFlex.sm="100" fxFlex.sm="100" fxFlex.xs="100" >
+                <md-card>
+                    <div class="gene-price-wrap text-center">
+                        <div class="text-right mrgn-b-lg"><span class="label mat-blue-800 border-rad-base">23/Mo</span></div> <i class="fa fa-shield fa-3x mrgn-b-lg gene-block" aria-hidden="true"></i>
+                        <p class="mat-text-primary gene-text-xl">Server AntiTheft</p>
+                        <p>We provide full insurance against any aspect of Server Secuity.We provide better solution for server</p>
+                    </div>
+                </md-card>
+            </div>
+            <div  fxFlex.sm="100" fxFlex.md="100" fxFlex.xs="100">
+                <md-card>
+                    <div class="gene-price-wrap text-center">
+                        <div class="text-right mrgn-b-lg"><span class="label mat-cyan border-rad-base">34/Mo</span></div> <i class="fa fa-life-ring fa-3x mrgn-b-lg gene-block" aria-hidden="true"></i>
+                        <p class="mat-text-primary gene-text-xl">24*7 Assistance</p>
+                        <p>We always here to help you anytime.Contact us on our customer care helpline for more information</p>
+                    </div>
+                </md-card>
+            </div>
+        </div>
+       <div fxLayout="row"  fxLayoutWrap="wrap" fxLayoutAlign="start center">
+             <div  fxFlex.sm="100" fxFlex.sm="100" fxFlex.xs="100" >
+                <md-card>
+                    <div class="gene-price-wrap text-center">
+                        <div class="text-right mrgn-b-lg"> <span class="label mat-red-600 border-rad-base">12/Mo</span></div> <i class="fa fa-server fa-3x mrgn-b-lg gene-block" aria-hidden="true"></i>
+                        <p class="mat-text-primary gene-text-xl">NextGen Server</p>
+                        <p>We provide 3rd generation server for your site.Which provide good speed in data processing and security</p>
+                    </div>
+                </md-card>
+            </div>
+            <div  fxFlex.sm="100" fxFlex.sm="100" fxFlex.xs="100" >
+                <md-card>
+                    <div class="gene-price-wrap text-center">
+                        <div class="text-right mrgn-b-lg"><span class="label mat-green border-rad-base">14/Mo</span></div> <i class="fa fa-sellsy fa-3x mrgn-b-lg gene-block" aria-hidden="true"></i>
+                        <p class="mat-text-primary gene-text-xl">Cloud Pro</p>
+                        <p>For backup, we provide cloud storage which is highly secure and you can access data anytime and everywhere</p>
+                    </div>
+                </md-card>
+            </div>
+        </div>
+    </div>
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>Live Chart Support</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                     <md-icon>sync</md-icon>
+                  </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>more_horiz</md-icon>
+                  </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <canvas baseChart height="215" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [colors]="polarChartColors" [chartType]="polarAreaChartType"></canvas>
+            </div>
+        </md-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <ms-stacked-area-chart fxFlex="100%" [data]="stackedAreaChartData" [options]="stackedAreaChartOptions"></ms-stacked-area-chart>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <md-card>
+            <div class="gene-card-title">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxLayout="column">
+                        <h4>Mixed Chart</h4>
+                    </div> <span fxFlex></span>
+                    <button md-icon-button>
+                     <md-icon>sync</md-icon>
+                  </button>
+                    <button md-icon-button [mdMenuTriggerFor]="options">
+                     <md-icon>more_horiz</md-icon>
+                  </button>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div class="gene-card-content">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <canvas baseChart width="300" height="115" [datasets]="mixedPointChartData" [labels]="mixedChartLabels" [options]="mixedChartOptions" [colors]="mixedChartColors" [legend]="mixedChartLegend" [chartType]="barChartType"></canvas>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div fxFlex.gt-sm="50" fxFlex="100">
+        <ms-line-chart title="Memory Usage" textColor="#000" chartColor="#1565C0" [data]="lineChartDemoData"> </ms-line-chart>
+    </div>
+</div>
+<md-menu #options="mdMenu" x-position="before">
+    <button md-menu-item>
+         <md-icon>settings</md-icon> Settings </button>
+    <button md-menu-item>
+         <md-icon>more</md-icon> View More </button>
+    <button md-menu-item>
+         <md-icon>notifications_off</md-icon> Disable notifications </button>
+    <button md-menu-item>
+         <md-icon>exit_to_app</md-icon> Remove Panel </button>
+</md-menu>

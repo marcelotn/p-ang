@@ -1,0 +1,89 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start" class="gene-form-wizard">
+   <md-card fxFlex="100%">
+      <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                  <div fxLayout="column">
+                  <h4>Form Wizard</h4>
+                  </div> 
+                  <span fxFlex></span> 
+            </div>
+         <md-divider></md-divider>
+      </div>
+      <div class="gene-card-content">
+         <md-tab-group [selectedIndex]="selectedIndex">
+            <md-tab label="Step 1">
+               <form #form="ngForm">
+                  <div fxLayout="column">
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="username" placeholder="Username" required ngModel="DemoUser"> </md-input-container>
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="email" type="email" required ngModel placeholder="E-Mail"> </md-input-container>
+                     </div>
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="password" type="password" required ngModel placeholder="Password"> </md-input-container>
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="password_confirm" type="password" required ngModel placeholder="Confirm Password"> </md-input-container>
+                     </div>
+                     <div fxLayout="row" fxLayoutAlign="start">
+                        <button md-button type="button" disabled>Previous </button>
+                        <button md-button md-raised-button [disabled]="!form.valid" (click)="nextStep()" type="button">Next </button>
+                     </div>
+                  </div>
+               </form>
+            </md-tab>
+            <md-tab label="Step 2" [disabled]="!form.valid">
+               <form #form2="ngForm">
+                  <div fxLayout="column">
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="firstname" placeholder="First Name" required> </md-input-container>
+                        <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                           <input mdInput name="lastname" placeholder="Last Name" required ngModel> </md-input-container>
+                     </div>
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                        <md-input-container fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100">
+                           <input mdInput name="street" required ngModel placeholder="Street"> </md-input-container>
+                        <md-input-container fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100">
+                           <input mdInput name="zipcode" required ngModel placeholder="Zipcode"> </md-input-container>
+                        <md-input-container fxFlex.gt-sm="32" fxFlex.gt-xs="32" fxFlex="100">
+                           <input mdInput name="city" required ngModel placeholder="City"> </md-input-container>
+                     </div>
+                     <div fxLayout="row" fxLayoutAlign="start">
+                        <button md-button type="button" (click)="previousStep()">Previous</button>
+                        <button md-button md-raised-button [disabled]="!form2.valid" (click)="nextStep()" type="button">Next</button>
+                     </div>
+                  </div>
+               </form>
+            </md-tab>
+            <md-tab label="Step 3" [disabled]="!form2.valid">
+               <form #form3="ngForm">
+                  <div fxLayout="column">
+                     <md-input-container fxFlex>
+                        <input mdInput name="creditcard" placeholder="Credit Card Number" required> </md-input-container>
+                        <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                     <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <input mdInput name="expirydate" required ngModel placeholder="Expiry Date (MM/YYYY)"> </md-input-container>
+                     <md-input-container fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <input mdInput name="creditcardname" required ngModel placeholder="Credit Card Owner"> </md-input-container>
+                     </div>
+                     <div fxLayout="row" fxLayoutAlign="start">
+                        <button md-button type="button" (click)="previousStep()">Previous</button>
+                        <button md-button md-raised-button [disabled]="!form3.valid" (click)="nextStep()" type="button">Next</button>
+                     </div>
+                  </div>
+               </form>
+            </md-tab>
+            <md-tab label="Step 4" [disabled]="!form3.valid">
+               <div fxLayout="column">
+                 <div class="custom-pad text-center">
+                  <h1>Congratulations!</h1>
+                  <p>You submitted your form successfully.</p>
+                  </div>
+               </div>
+            </md-tab>
+         </md-tab-group>
+      </div>
+   </md-card>
+</div>

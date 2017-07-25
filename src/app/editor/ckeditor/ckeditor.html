@@ -1,0 +1,15 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Ck Editor</h4>
+            </div> <span fxFlex></span>
+
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <ckeditor [(ngModel)]="ckeditorContent" [config]="config"></ckeditor>
+    </div>
+</md-card>

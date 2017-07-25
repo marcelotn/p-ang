@@ -1,0 +1,18 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Dialog</h4>
+            </div> <span fxFlex></span>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p class="mrgn-b-lg">MdDialog is a service, which opens dialogs components in the view.</p>
+        <div class="mrgn-b-lg">
+            <button md-raised-button type="button" (click)="openDialog()" color="primary">Open Dialog</button>
+        </div>
+        <p *ngIf="result" class="mat-text-primary">You chose: {{ result }}</p>
+
+    </div>
+</md-card>

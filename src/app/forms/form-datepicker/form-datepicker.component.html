@@ -1,0 +1,10 @@
+<md-input-container class="full-wid">
+    <input mdInput [mdDatepicker]="datepicker" 
+                   placeholder="{{label}}" 
+                   [formControl]="control">
+    <button mdSuffix [mdDatepickerToggle]="datepicker"></button>
+    <md-error *ngFor="let error of errors">
+        {{error}}
+    </md-error>
+</md-input-container>
+<md-datepicker #datepicker></md-datepicker>

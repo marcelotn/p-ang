@@ -1,0 +1,145 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign=" start" class="gene-form-wizard">
+    <md-card fxFlex="100%">
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>Form Validation</h4>
+                </div> <span fxFlex></span> </div>
+            <md-divider></md-divider>
+        </div>
+        <div class="gene-card-content">
+            <form [formGroup]="form">
+                
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                            <md-input-container class="full-wid">
+                                <input mdInput placeholder="First name" [formControl]="form.controls['fname']">
+                            </md-input-container>
+                            <small class="gene-block" *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched"  class="mat-text-warn">
+			 			You must include a first name.
+			 		</small>
+                            <small class="gene-block" *ngIf="form.controls['fname'].hasError('minlength') && form.controls['fname'].touched"  class="mat-text-warn">
+			 			Your first name must be at least 5 characters long.
+			 		</small>
+                            <small class="gene-block" *ngIf="form.controls['fname'].hasError('maxlength') && form.controls['fname'].touched"  class="mat-text-warn">
+			 			Your first name cannot exceed 10 characters.
+			 		</small>
+                        </div>
+                   
+                   
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Email address" [formControl]="form.controls['email']" type="email">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched"  class="mat-text-warn">
+		  			You must include an email address.
+		  		</small>
+                        <small class="gene-block" *ngIf="form.controls['email'].errors && !(form.controls['email'].hasError('required')) && form.controls['email'].touched"  class="mat-text-warn">
+		  			You must include a valid email address.
+		  		</small>
+                    </div>
+                </div>
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Website address (http://google.com)" [formControl]="form.controls['url']" type="url">
+                        </md-input-container>
+                        <small  class="gene-block" *ngIf="form.controls['url'].hasError('required') && form.controls['url'].touched"  class="mat-text-warn">		You must include a web address.
+		  		</small>
+                        <small  class="gene-block" *ngIf="form.controls['url'].errors && !(form.controls['url'].hasError('required')) && form.controls['url'].touched" class="mat-text-warn">
+		  			You must include a valid web address.
+		  		</small>
+                  </div>
+
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Date" [formControl]="form.controls['date']" type="date">
+                        </md-input-container>
+                        <small  class="gene-block" *ngIf="form.controls['date'].hasError('required') && form.controls['date'].touched"  class="mat-text-warn">
+		  			You must include a date.
+		  		</small>
+                        <small class="gene-block"  *ngIf="form.controls['date'].errors && !(form.controls['date'].hasError('required')) && form.controls['date'].touched"  class="mat-text-warn">
+		  			You must include a valid date.
+		  		</small>
+                    </div>
+                </div>
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Number range (between 5 and 9)" [formControl]="form.controls['range']">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['range'].hasError('required') && form.controls['range'].touched"  class="mat-text-warn">
+		  			You must enter a number.
+		  		</small>
+                        <small class="gene-block" *ngIf="form.controls['range'].errors && !(form.controls['range'].hasError('required')) && form.controls['range'].touched"  class="mat-text-warn">
+		  			Number should be between 5 and 9.
+		  		</small>
+                    </div>
+
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Credit card (4111 1111 1111 1111)" [formControl]="form.controls['creditCard']">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['creditCard'].hasError('required') && form.controls['creditCard'].touched"  class="mat-text-warn">
+		  			You must enter a credit card.
+		  		</small>
+                        <small class="gene-block" *ngIf="form.controls['creditCard'].errors && !(form.controls['creditCard'].hasError('required')) && form.controls['creditCard'].touched"  class="mat-text-warn">
+		  			You must enter a valid credit card number.
+		  		</small>
+                    </div>
+                </div>
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="US Phone number (15417543010)" [formControl]="form.controls['phone']" type="text">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['phone'].hasError('required') && form.controls['phone'].touched"  class="mat-text-warn">
+		  			You must include phone number.
+		  		</small>
+                        <small class="gene-block" *ngIf="form.controls['phone'].errors && !(form.controls['phone'].hasError('required')) && form.controls['phone'].touched"  class="mat-text-warn">
+		  			You must include a valid phone number.
+		  		</small>
+                    </div>
+
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Password" [formControl]="form.controls['password']" type="password">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"  class="mat-text-warn">
+					You must include password.
+				</small>
+                    </div>
+</div>
+                     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <md-input-container class="full-wid">
+                            <input mdInput placeholder="Confirm Password" [formControl]="form.controls['confirmPassword']" type="password">
+                        </md-input-container>
+                        <small class="gene-block" *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched"  class="mat-text-warn">
+					You must include confirm password.
+				</small>
+                        <small class="gene-block" *ngIf="form.controls['confirmPassword'].errors && (form.controls['confirmPassword'].hasError('required'))"  class="mat-text-warn">
+					Passwords do not match.
+				</small>
+                    </div>
+
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100">
+                        <label>Gender</label>
+                        <md-radio-group [formControl]="form.controls['gender']">
+                            <md-radio-button value="male">Male</md-radio-button>
+                            <md-radio-button value="female">Female</md-radio-button>
+                        </md-radio-group>
+                        <small *ngIf="!form.controls['gender'].valid && form.controls['gender'].touched"  class="mat-text-warn">
+		  			You must select a gender.
+		  		</small>
+                    </div>
+                </div>
+                <div class="pad-wrap">
+                <md-card-actions>
+                    <button md-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+                </md-card-actions>
+                </div>
+            </form>
+        </div>
+    </md-card>
+</div>

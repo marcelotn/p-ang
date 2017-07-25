@@ -1,0 +1,36 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Grid List</h4>
+            </div> <span fxFlex></span>
+
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <p><code>md-grid-list</code> is an alternative list view that arranges cells into grid-based layout.</p>
+        <md-tab-group>
+            <md-tab>
+                <ng-template md-tab-label>Fixed height</ng-template>
+                <md-card-content>
+                    <md-grid-list [cols]="fixedCols" [rowHeight]="fixedRowHeight">
+                        <md-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+                            {{tile.text}}
+                        </md-grid-tile>
+                    </md-grid-list>
+                </md-card-content>
+            </md-tab>
+            <md-tab>
+                <ng-template md-tab-label>Ratio height</ng-template>
+                <md-card-content>
+                    <md-grid-list cols="2" [rowHeight]="ratio" gutterSize="4px">
+                        <md-grid-tile *ngFor="let tile of tiles" [style.background]="'#1565c0'">
+                            {{tile.text}}
+                        </md-grid-tile>
+                    </md-grid-list>
+                </md-card-content>
+            </md-tab>
+        </md-tab-group>
+    </div>
+</md-card>

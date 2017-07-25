@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start">
+  	<div fxFlex.gt-md="100" fxFlex.gt-sm="100" fxFlex="100">
+	   <md-card>
+	            <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+               <div fxLayout="column">
+                  <h4>Global Locations</h4></div> <span fxFlex></span>
+               <button md-icon-button>
+                  <md-icon>sync</md-icon>
+               </button>
+               <button md-icon-button [mdMenuTriggerFor]="options">
+                  <md-icon>more_horiz</md-icon>
+               </button>
+            </div>
+            <md-divider></md-divider>
+         </div>
+         <div class="gene-card-content">
+			<div class="leaflet-maps"></div>
+          </div>
+		</md-card>
+	</div>
+</div>
+<md-menu #options="mdMenu" x-position="before">
+   <button md-menu-item>
+      <md-icon>settings</md-icon> Settings </button>
+   <button md-menu-item>
+      <md-icon>more</md-icon> View More </button>
+   <button md-menu-item>
+      <md-icon>notifications_off</md-icon> Disable notifications </button>
+   <button md-menu-item>
+      <md-icon>exit_to_app</md-icon> Remove Panel </button>
+</md-menu>

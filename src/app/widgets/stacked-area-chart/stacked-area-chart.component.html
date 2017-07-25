@@ -1,0 +1,26 @@
+<md-card class="widget">
+   <div class="gene-card-title">
+      <div fxLayout="row" fxLayoutAlign="start start">
+         <div fxLayout="column">
+            <h4>{{ options.name }}</h4></div> <span fxFlex></span>
+         <button md-icon-button>
+            <md-icon>sync</md-icon>
+         </button>
+         <button md-icon-button [mdMenuTriggerFor]="menu1">
+            <md-icon>more_horiz</md-icon>
+         </button>
+      </div>
+      <md-divider></md-divider>
+   </div>
+   <div class="gene-card-content">
+      <nvd3 [options]="chartOptions" [data]="data"></nvd3>
+   </div>
+</md-card>
+<md-menu #menu1="mdMenu">
+   <button md-menu-item>
+      <md-icon> settings </md-icon> <span> Settings </span> </button>
+   <button md-menu-item disabled>
+      <md-icon> more </md-icon> <span> More Info </span> </button>
+   <button md-menu-item>
+      <md-icon> remove_circle </md-icon> <span> Remove Widget </span> </button>
+</md-menu>

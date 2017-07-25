@@ -1,0 +1,47 @@
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign=" start" class="gene-form-wizard">
+    <md-card fxFlex="100%">
+        <div class="gene-card-title">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <h4>{{header}}</h4>
+                </div>
+                <span fxFlex></span>
+            </div>
+            <md-divider></md-divider>
+        </div>
+        <div class="gene-card-content">
+            <ng-template #chkBxTmpl let-row="row" let-value="value">
+                <button md-mini-fab color="primary"
+                        mdTooltip="Editar instituição {{value}}"
+                        type="button"
+                        (click)="editInstitution(row)">
+                    <md-icon>create</md-icon>
+                </button>
+                <button md-mini-fab color="warn"
+                        type="button"
+                        mdTooltip="Apagar instituição {{value}}"
+                        type="button"
+                        (click)="removeInstitution(row)">
+                    <md-icon>delete</md-icon>
+                </button>
+            </ng-template>
+            <ngx-datatable class="material" [rows]="paginationData.rows" 
+                *ngIf="pendingInstitutionListRequests == 0"
+                [columns]="[
+                            {name:'#', prop: 'id'}, 
+                            {name:'Código', prop: 'code'},
+                            {
+                                cellTemplate: this.chkBxTmpl, 
+                                prop: 'checked',
+                                name: 'Ações',
+                                width: 100
+                            }]" 
+                [columnMode]="'force'" [headerHeight]="50"
+                [footerHeight]="50" [rowHeight]="'auto'" 
+                [externalPaging]="true" 
+                [count]="paginationData.totalElements" [offset]="paginationData.currentPage"
+                [limit]="paginationData.itemsPerPage" (page)='loadInstitutions($event)'>
+            </ngx-datatable>
+        </div>
+    </md-card>
+</div>

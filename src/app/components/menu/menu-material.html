@@ -1,0 +1,53 @@
+<md-card>
+    <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="column">
+                <h4>Menus (dropdowns)</h4>
+            </div> <span fxFlex></span>
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div class="gene-card-content">
+        <md-card-subtitle><code>md-menu</code> is a list of options that displays when triggered.</md-card-subtitle>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Menu without Icons</h5>
+            <md-toolbar>
+                <button md-icon-button [md-menu-trigger-for]="menu" aria-label="Open basic menu">
+	   	<md-icon>more_vert</md-icon>
+	   </button>
+            </md-toolbar>
+            <md-menu #menu="mdMenu">
+                <button md-menu-item *ngFor="let item of items">
+	      {{ item.text }}
+	   </button>
+            </md-menu>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Menu with Icons</h5>
+            <md-toolbar>
+                <button md-icon-button [md-menu-trigger-for]="menuicon" aria-label="Open icon menu">
+	      <md-icon>grade</md-icon>
+	   </button>
+            </md-toolbar>
+            <md-menu #menuicon="mdMenu">
+                <button md-menu-item *ngFor="let item of iconItems" [disabled]="item.disabled">
+      	<md-icon>{{ item.icon }}</md-icon>
+      		{{ item.text }}
+    	</button>
+            </md-menu>
+        </div>
+        <div class="box-inset pad-all-md mrgn-b-md">
+            <h5 class="mrgn-b-md">Clicking these will navigate</h5>
+            <md-toolbar>
+                <button md-icon-button [md-menu-trigger-for]="anchorMenu" aria-label="Open anchor menu">
+	      <md-icon>more_vert</md-icon>
+	   </button>
+            </md-toolbar>
+            <md-menu #anchorMenu="mdMenu">
+                <a md-menu-item *ngFor="let item of items" href="http://www.google.com" [disabled]="item.disabled">
+	      {{ item.text }}
+	    </a>
+            </md-menu>
+        </div>
+    </div>
+</md-card>
